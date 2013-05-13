@@ -61,8 +61,22 @@ static inline GCFileEncoding encodingForDataWithEncoding(NSData *data, NSStringE
     return GCUnknownFileEncoding;
 }
 
-static inline GCFileEncoding encodingForData(NSData *data) {
-    return encodingForDataWithEncoding(data, NSASCIIStringEncoding);
+static inline GCFileEncoding encodingForData(NSData *data)
+{
+    // According to GEDCOM 5.5, chapter 3 (Using Character Sets in GEDCOM)
+    
+    char buffer[] = {0x00, 0x00};
+    [data getBytes:buffer length:2];
+    if (buffer[0] == 0x30 && buffer[1] == 0x20) {
+        return encodingForDataWithEncoding(data, NSASCIIStringEncoding);
+    }
+    else if (buffer[0] == 0x30 && buffer[1] == 0x00){
+        return encodingForDataWithEncoding(data, NSUTF8StringEncoding);
+    }
+    else {
+        NSLog(@"Unable to dertermine encoding");
+        return GCUnknownFileEncoding;
+    }
 }
 
 // created by anselmap.py via ans2uni.out from http://www.heiner-eichmann.de/gedcom/charintr.htm
