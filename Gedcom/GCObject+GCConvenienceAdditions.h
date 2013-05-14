@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Mikkel Eide Eriksen. All rights reserved.
 //
 
-#import "GCObject_internal.h"
+#import "GCObject.h"
 
 @interface GCObject (GCConvenienceAdditions)
 

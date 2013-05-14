@@ -19,6 +19,7 @@
 #import "GCRelationship.h"
 
 #import "GCValue_internal.h"
+#import "GCObject_internal.h"
 
 NSString *GCErrorDomain = @"GCErrorDomain";
 

@@ -7,6 +7,7 @@
 //
 
 #import "GCContext+GCKeyValueAdditions.h"
+#import "GCContext_internal.h"
 
 #import "GCObject+GCConvenienceAdditions.h"
 #import "GCTagAccessAdditions.h"

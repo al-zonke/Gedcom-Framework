@@ -485,6 +485,8 @@
 		3EF7A1CF151C5F8E004A8540 /* GCNodeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EF7A1CE151C5F8E004A8540 /* GCNodeTests.m */; };
 		3EF7A1D6151C600C004A8540 /* allged.ged in Resources */ = {isa = PBXBuildFile; fileRef = 3EF7A1D4151C600C004A8540 /* allged.ged */; };
 		3EF7A1D7151C600C004A8540 /* simple.ged in Resources */ = {isa = PBXBuildFile; fileRef = 3EF7A1D5151C600C004A8540 /* simple.ged */; };
+		8AA4D447174270BD000E2B66 /* GCContext_internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E17B4B31602CEAF009D2CCB /* GCContext_internal.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		8AC799781742764C00578E90 /* GedcomErrors.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E5A68671610CA16005B2319 /* GedcomErrors.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -2040,12 +2042,14 @@
 				3EF13698171B43EF00EDB33C /* GCNode_internal.h in Headers */,
 				3E8F87C1171C9FDB003111D2 /* GedcomTypedefs.h in Headers */,
 				3E8F87CE171CBAE7003111D2 /* GedcomCharacterSetHelpers.h in Headers */,
-				3E3CD5BC17299F9B003AD101 /* GCGedcomLoadingAdditions_internal.h in Headers */,
-				3E37558D17339B510081AE44 /* GCObjectProxy.h in Headers */,
+				8AC799781742764C00578E90 /* GedcomErrors.h in Headers */,
 				3E83FF2D171CDFA10093B685 /* GCContext+GCKeyValueAdditions.h in Headers */,
 				3E0C330017241EE90022E4D1 /* GCRecord.h in Headers */,
 				3E2001E917287428004D5EE5 /* NSObject+MELazyPropertySwizzlingAdditions.h in Headers */,
+				8AA4D447174270BD000E2B66 /* GCContext_internal.h in Headers */,
 				3E713EBC17295F740098EBC3 /* GCSimilarityAdditions.h in Headers */,
+				3E3CD5BC17299F9B003AD101 /* GCGedcomLoadingAdditions_internal.h in Headers */,
+				3E37558D17339B510081AE44 /* GCObjectProxy.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,7 +6,10 @@
 //  Copyright (c) 2013 Mikkel Eide Eriksen. All rights reserved.
 //
 
-#import "GCContext_internal.h"
+#import "GCContext.h"
+
+@class GCHeaderEntity;
+@class GCSubmissionRecord;
 
 #pragma mark -
 

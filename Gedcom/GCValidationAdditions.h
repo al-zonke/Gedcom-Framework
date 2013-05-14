@@ -7,7 +7,7 @@
 //
 
 #import "GCContext.h"
-#import "GCObject_internal.h"
+#import "GCObject.h"
 
 @interface GCContext (GCValidationAdditions)
 

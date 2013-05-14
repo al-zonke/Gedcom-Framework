@@ -24,6 +24,8 @@
 
 #import "GCObjectProxy.h"
 
+#import "GCObject_internal.h"
+
 @implementation GCObject (GCGedcomLoadingAdditions)
 
 - (void)_addPropertyWithGedcomNode:(GCNode *)node

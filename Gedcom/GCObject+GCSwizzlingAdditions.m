@@ -7,6 +7,7 @@
 //
 
 #import "GCObject+GCSwizzlingAdditions.h"
+#import "GCObject_internal.h"
 
 #import "GCTagAccessAdditions.h"
 
