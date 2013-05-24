@@ -8,6 +8,8 @@
 
 #import "GCTag.h"
 
+#import "Gedcom_internal.h"
+
 @interface NSMapTable (GCSubscriptAdditions)
 
 - (id)objectForKeyedSubscript:(id)key;
@@ -219,7 +221,7 @@ static inline void expandSubtag(NSMutableOrderedSet *set, NSMutableDictionary *o
         
         _code = _settings[kTagCode];
         _isCustom = [_name hasPrefix:@"custom"];
-        _localizedName = [[NSBundle bundleForClass:[self class]] localizedStringForKey:_name value:_name table:@"Tags"];
+        _localizedName = GCLocalizedString(_name, @"Tags");
         _pluralName = _settings[kPluralName];
         
         // objectClass
@@ -330,12 +332,14 @@ static inline void expandSubtag(NSMutableOrderedSet *set, NSMutableDictionary *o
 
 #pragma mark Subtags
 
-- (GCTag *)subTagWithCode:(NSString *)code type:(NSString *)type
+- (GCTag *)subTagWithCode:(NSString *)code type:(GCTagType)type
 {
+    NSString *tagType = (type == GCTagTypeRelationship ? @"relationship" : @"attribute" ); //TODO check for others
+    
     if ([code hasPrefix:@"_"]) {
         @synchronized (self) {
-            NSString *className = [NSString stringWithFormat:@"GCCustom%@", [type capitalizedString]];
-            NSString *tagName = [NSString stringWithFormat:@"custom%@%@", code, [type capitalizedString]];
+            NSString *className = [NSString stringWithFormat:@"GCCustom%@", [tagType capitalizedString]];
+            NSString *tagName = [NSString stringWithFormat:@"custom%@%@", code, [tagType capitalizedString]];
             NSString *pluralName = [NSString stringWithFormat:@"%@s", tagName];
             
             if (_tagStore[tagName]) {
@@ -348,7 +352,7 @@ static inline void expandSubtag(NSMutableOrderedSet *set, NSMutableDictionary *o
                                          kPluralName: pluralName,
                                           kValueType: @"string",
                                          kTargetType: @"record",
-                                         kObjectType: type,
+                                         kObjectType: tagType,
                                        kValidSubTags: [NSArray array]}];
             NSLog(@"Created %@: %@", tagName, tag);
             _tagStore[tagName] = tag;
@@ -359,7 +363,7 @@ static inline void expandSubtag(NSMutableOrderedSet *set, NSMutableDictionary *o
         }
     }
     
-    return _cachedSubTagsByCode[type][code];
+    return _cachedSubTagsByCode[tagType][code];
 }
 
 - (GCTag *)subTagWithName:(NSString *)name

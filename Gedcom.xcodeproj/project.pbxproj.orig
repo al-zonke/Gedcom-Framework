@@ -2067,9 +2067,12 @@
 				3E2001E917287428004D5EE5 /* NSObject+MELazyPropertySwizzlingAdditions.h in Headers */,
 				8AA4D447174270BD000E2B66 /* GCContext_internal.h in Headers */,
 				3E713EBC17295F740098EBC3 /* GCSimilarityAdditions.h in Headers */,
-				3E4BCFA01741B0AB008886B3 /* Gedcom_internal.h in Headers */,
+<<<<<<< HEAD
 				3E3CD5BC17299F9B003AD101 /* GCGedcomLoadingAdditions_internal.h in Headers */,
 				3E37558D17339B510081AE44 /* GCObjectProxy.h in Headers */,
+=======
+				3E4BCFA01741B0AB008886B3 /* Gedcom_internal.h in Headers */,
+>>>>>>> upstream/master
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
