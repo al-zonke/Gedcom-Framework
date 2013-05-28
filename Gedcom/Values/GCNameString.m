@@ -38,6 +38,11 @@
                                         [nameParts[0] stringByTrimmingCharactersInSet:whitespace],
                                         suffix
                                         ];
+
+                NSMutableCharacterSet *whitespaceAndSeparators = [NSMutableCharacterSet whitespaceAndNewlineCharacterSet];
+                [whitespaceAndSeparators formUnionWithCharacterSet:[NSCharacterSet punctuationCharacterSet]];
+                _cachedDisplayString = [_cachedDisplayString stringByTrimmingCharactersInSet:whitespaceAndSeparators];
+                
                 break;
             }
                 
