@@ -59,6 +59,13 @@
 
 @end
 
+@interface GCContext ()
+
+- (BOOL)parseULR:(NSURL *)url error:(NSError * *)error;
+- (BOOL)parseFile:(NSString *)filePath error:(NSError * *)error;
+
+@end
+
 @implementation GCContext {
 	NSMapTable *_xrefToRecordMap;
     NSMapTable *_recordToXrefMap;
@@ -127,6 +134,50 @@ __strong static NSMapTable *_contextsByName = nil;
 
 #pragma mark Loading nodes into a context
 
+- (BOOL)stringIsANSEL:(NSString *)gedcomString
+{
+    NSRange anselRange = [gedcomString rangeOfString:@"1 ANSEL" options:NSCaseInsensitiveSearch range:NSMakeRange(0, 1000)];
+    BOOL isANSEL = (anselRange.length == 0);
+    
+    return isANSEL;
+}
+
+- (BOOL)parseULR:(NSURL *)url error:(NSError * *)error
+{
+    NSStringEncoding usedEncoding = 0;
+    NSError *parseError = nil;
+    
+    NSString *gedString = [NSString stringWithContentsOfURL:url usedEncoding:&usedEncoding error:&parseError];
+    
+    // ANSEL can be interpreted as ASCII
+    if ((usedEncoding == NSASCIIStringEncoding) &&
+        ([self stringIsANSEL:gedString]))
+    {
+        NSData *anselData = [NSData dataWithContentsOfURL:url];
+        gedString = stringFromANSELData(anselData);
+    }
+    
+    return [self parseString:gedString error:error];
+}
+
+- (BOOL)parseFile:(NSString *)filePath error:(NSError * *)error
+{
+    NSStringEncoding usedEncoding = 0;
+    NSError *parseError = nil;
+    
+    NSString *gedString = [NSString stringWithContentsOfFile:filePath usedEncoding:&usedEncoding error:&parseError];
+    
+    // ANSEL can be interpreted as ASCII
+    if ((usedEncoding == NSASCIIStringEncoding) &&
+        ([self stringIsANSEL:gedString]))
+    {
+        NSData *anselData = [NSData dataWithContentsOfFile:filePath];
+        gedString = stringFromANSELData(anselData);
+    }
+    
+    return [self parseString:gedString error:error];
+}
+
 - (BOOL)parseData:(NSData *)data error:(NSError **)error
 {
     GCParameterAssert([self.entities count] == 0);
@@ -151,6 +202,11 @@ __strong static NSMapTable *_contextsByName = nil;
         gedString = [[NSString alloc] initWithData:data encoding:fileEncoding];
     }
     
+    return [self parseString:gedString error:error];
+}
+
+- (BOOL)parseString:(NSString *)gedString error:(NSError **)error
+{
 #ifdef DEBUGLEVEL
     NSDate *start = [NSDate date];
 #endif
@@ -164,23 +220,26 @@ __strong static NSMapTable *_contextsByName = nil;
             [_mainQueue addOperationWithBlock:^{
                 GCTag *tag = [GCTag rootTagWithCode:node.tagCode];
                 
-                NSParameterAssert(tag);
-                
-                if (tag.objectClass != [GCTrailerEntity class]) {
-                    GCEntity *entity = [tag.objectClass newWithGedcomNode:node inContext:self];
-                    NSParameterAssert(entity.context == self);
+                if (tag != nil)
+                {
+                    NSParameterAssert(tag);
                     
-                    [_mainQueue addOperationWithBlock:^{
-                        [entity _waitUntilDoneBuildingFromGedcom];
-                        //NSLog(@"%lu: %p done", [_mainQueue operationCount], entity);
-                    }];
-                }
-                
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    if (_delegate && [_delegate respondsToSelector:@selector(context:didUpdateEntityCount:)]) {
-                        [_delegate context:self didUpdateEntityCount:++_importCount];
+                    if (tag.objectClass != [GCTrailerEntity class]) {
+                        GCEntity *entity = [tag.objectClass newWithGedcomNode:node inContext:self];
+                        NSParameterAssert(entity.context == self);
+                        
+                        [_mainQueue addOperationWithBlock:^{
+                            [entity _waitUntilDoneBuildingFromGedcom];
+                            //NSLog(@"%lu: %p done", [_mainQueue operationCount], entity);
+                        }];
                     }
-                });
+                    
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        if (_delegate && [_delegate respondsToSelector:@selector(context:didUpdateEntityCount:)]) {
+                            [_delegate context:self didUpdateEntityCount:++_importCount];
+                        }
+                    });
+                }
             }];
         }
     }
@@ -205,12 +264,12 @@ __strong static NSMapTable *_contextsByName = nil;
 
 - (BOOL)readContentsOfFile:(NSString *)path error:(NSError **)error
 {
-    return [self parseData:[NSData dataWithContentsOfFile:path] error:error];
+    return [self parseFile:path error:error];
 }
 
 - (BOOL)readContentsOfURL:(NSURL *)url error:(NSError **)error
 {
-    return [self parseData:[NSData dataWithContentsOfURL:url] error:error];
+    return [self parseULR:url error:error];
 }
 
 #pragma mark Saving a context
