@@ -133,7 +133,7 @@ level + delim + optional_xref_id + tag + delim + optional_line_value + terminato
 
     contents                = ( ( xref delim tagCode ) | ( tagCode delim value ) | ( tagCode delim? ) );
 
-    node                    = ( level delim contents terminator ) %saveNode;
+    node                    = ( level delim contents <: space* :> terminator ) %saveNode;
     
     main                   := ( node+ ) %/finish;
     
