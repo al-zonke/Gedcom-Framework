@@ -137,8 +137,7 @@
         "plural": "repositories",
 		"validSubTags": [
                          { "name": "descriptiveName", "min": 0, "max": 1 },
-                         { "name": "address", "min": 0, "max": 1 },
-                         { "name": "phoneNumber", "min": 0, "max": 3 },
+                         { "subClassName": "!addressStructure" },
                          { "groupName": "@note" },
                          { "name": "userReferenceNumber", "min": 0, "max": "M" },
                          { "name": "recordIdNumber", "min": 0, "max": 1 },
@@ -168,8 +167,7 @@
 		"code": "SUBM",
 		"validSubTags": [
                          { "name": "descriptiveName", "min": 1, "max": 1 },
-                         { "name": "address", "min": 0, "max": 1 },
-                         { "name": "phoneNumber", "min": 0, "max": 3 },
+                         { "subClassName": "!addressStructure" },
                          { "groupName": "@multimedia" },
                          { "name": "language", "min": 0, "max": 3 },
                          { "name": "recordFileNumber", "min": 0, "max": 1 },
@@ -555,13 +553,43 @@
                          { "name": "country", "min": 0, "max": 1 }
                          ]
 	},
-	"addressLine1": {
+    "!addressStructure": {
+        "objectType": "attribute",
+		"valueType": "bool",
+        "allowsNil": true,
+        "subClasses": [
+                       { "name": "address", "min": 0, "max": 1 },
+                       { "name": "phoneNumber", "min": 0, "max": 3 },
+                       { "name": "emailAddress", "min": 0, "max": 3 },
+                       { "name": "faxNumber", "min": 0, "max": 3 },
+                       { "name": "webAddress", "min": 0, "max": 3 }
+                       ]
+    },
+    "addressLine1": {
 		"code": "ADR1",
 		"objectType": "attribute",
 		"valueType": "string"
 	},
 	"addressLine2": {
 		"code": "ADR2",
+		"objectType": "attribute",
+		"valueType": "string"
+	},
+    "faxNumber": {
+		"code": "FAX",
+		"plural": "faxNumbers",
+		"objectType": "attribute",
+		"valueType": "string"
+	},
+	"emailAddress": {
+		"code": "EMAIL",
+		"plural": "emailAddresses",
+		"objectType": "attribute",
+		"valueType": "string"
+	},
+	"webAddress": {
+		"code": "WWW",
+		"plural": "webAddresses",
 		"objectType": "attribute",
 		"valueType": "string"
 	},
@@ -744,8 +772,7 @@
 		"objectType": "attribute",
 		"valueType": "string",
 		"validSubTags": [
-                         { "name": "address", "min": 0, "max": 1 },
-                         { "name": "phoneNumber", "min": 0, "max": 3 }
+                         { "subClassName": "!addressStructure" }
                          ]
 	},
 	"country": {

@@ -487,6 +487,14 @@
 		3EF7A1CF151C5F8E004A8540 /* GCNodeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EF7A1CE151C5F8E004A8540 /* GCNodeTests.m */; };
 		3EF7A1D6151C600C004A8540 /* allged.ged in Resources */ = {isa = PBXBuildFile; fileRef = 3EF7A1D4151C600C004A8540 /* allged.ged */; };
 		3EF7A1D7151C600C004A8540 /* simple.ged in Resources */ = {isa = PBXBuildFile; fileRef = 3EF7A1D5151C600C004A8540 /* simple.ged */; };
+		8A92D69B1765D72700DF8E89 /* GCWebAddressAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A92D6971765D72700DF8E89 /* GCWebAddressAttribute.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8A92D69C1765D72700DF8E89 /* GCFaxNumberAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A92D6981765D72700DF8E89 /* GCFaxNumberAttribute.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8A92D69D1765D72700DF8E89 /* GCEmailAddressAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A92D6991765D72700DF8E89 /* GCEmailAddressAttribute.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8A92D6A31765D73C00DF8E89 /* GCWebAddressAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A92D69F1765D73C00DF8E89 /* GCWebAddressAttribute.m */; };
+		8A92D6A41765D73C00DF8E89 /* GCFaxNumberAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A92D6A01765D73C00DF8E89 /* GCFaxNumberAttribute.m */; };
+		8A92D6A51765D73C00DF8E89 /* GCEmailAddressAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A92D6A11765D73C00DF8E89 /* GCEmailAddressAttribute.m */; };
+		8A92D6B01765ED6000DF8E89 /* GCAddressStructureAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A92D6AF1765ED5F00DF8E89 /* GCAddressStructureAttribute.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8A92D6B21765ED7100DF8E89 /* GCAddressStructureAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A92D6B11765ED7000DF8E89 /* GCAddressStructureAttribute.m */; };
 		8AA4D447174270BD000E2B66 /* GCContext_internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E17B4B31602CEAF009D2CCB /* GCContext_internal.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		8AC799781742764C00578E90 /* GedcomErrors.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E5A68671610CA16005B2319 /* GedcomErrors.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
@@ -1037,6 +1045,14 @@
 		3EF7A1CE151C5F8E004A8540 /* GCNodeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCNodeTests.m; sourceTree = "<group>"; };
 		3EF7A1D4151C600C004A8540 /* allged.ged */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = allged.ged; sourceTree = "<group>"; };
 		3EF7A1D5151C600C004A8540 /* simple.ged */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = simple.ged; sourceTree = "<group>"; };
+		8A92D6971765D72700DF8E89 /* GCWebAddressAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCWebAddressAttribute.h; sourceTree = "<group>"; };
+		8A92D6981765D72700DF8E89 /* GCFaxNumberAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCFaxNumberAttribute.h; sourceTree = "<group>"; };
+		8A92D6991765D72700DF8E89 /* GCEmailAddressAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCEmailAddressAttribute.h; sourceTree = "<group>"; };
+		8A92D69F1765D73C00DF8E89 /* GCWebAddressAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCWebAddressAttribute.m; sourceTree = "<group>"; };
+		8A92D6A01765D73C00DF8E89 /* GCFaxNumberAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCFaxNumberAttribute.m; sourceTree = "<group>"; };
+		8A92D6A11765D73C00DF8E89 /* GCEmailAddressAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCEmailAddressAttribute.m; sourceTree = "<group>"; };
+		8A92D6AF1765ED5F00DF8E89 /* GCAddressStructureAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCAddressStructureAttribute.h; sourceTree = "<group>"; };
+		8A92D6B11765ED7000DF8E89 /* GCAddressStructureAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCAddressStructureAttribute.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1339,6 +1355,10 @@
 		3E41BD4E1725FBF9003286E7 /* generated_headers */ = {
 			isa = PBXGroup;
 			children = (
+				8A92D6AF1765ED5F00DF8E89 /* GCAddressStructureAttribute.h */,
+				8A92D6971765D72700DF8E89 /* GCWebAddressAttribute.h */,
+				8A92D6981765D72700DF8E89 /* GCFaxNumberAttribute.h */,
+				8A92D6991765D72700DF8E89 /* GCEmailAddressAttribute.h */,
 				3E41BD4F1725FBF9003286E7 /* GCAbbreviationAttribute.h */,
 				3E41BD501725FBF9003286E7 /* GCAddressAttribute.h */,
 				3E41BD511725FBF9003286E7 /* GCAddressLine1Attribute.h */,
@@ -1505,6 +1525,10 @@
 		3E41BDEE1725FBF9003286E7 /* generated_implementations */ = {
 			isa = PBXGroup;
 			children = (
+				8A92D6B11765ED7000DF8E89 /* GCAddressStructureAttribute.m */,
+				8A92D69F1765D73C00DF8E89 /* GCWebAddressAttribute.m */,
+				8A92D6A01765D73C00DF8E89 /* GCFaxNumberAttribute.m */,
+				8A92D6A11765D73C00DF8E89 /* GCEmailAddressAttribute.m */,
 				3E41BDEF1725FBF9003286E7 /* GCAbbreviationAttribute.m */,
 				3E41BDF01725FBF9003286E7 /* GCAddressAttribute.m */,
 				3E41BDF11725FBF9003286E7 /* GCAddressLine1Attribute.m */,
@@ -2070,6 +2094,10 @@
 				3E4BCFA01741B0AB008886B3 /* Gedcom_internal.h in Headers */,
 				3E3CD5BC17299F9B003AD101 /* GCGedcomLoadingAdditions_internal.h in Headers */,
 				3E37558D17339B510081AE44 /* GCObjectProxy.h in Headers */,
+				8A92D69B1765D72700DF8E89 /* GCWebAddressAttribute.h in Headers */,
+				8A92D69C1765D72700DF8E89 /* GCFaxNumberAttribute.h in Headers */,
+				8A92D69D1765D72700DF8E89 /* GCEmailAddressAttribute.h in Headers */,
+				8A92D6B01765ED6000DF8E89 /* GCAddressStructureAttribute.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2502,6 +2530,10 @@
 				3E713ECC172965FB0098EBC3 /* GCContext+GCConvenienceAdditions.m in Sources */,
 				3E56885B1730415900CB1997 /* GCTagAccessAdditions.m in Sources */,
 				3E37558E17339B510081AE44 /* GCObjectProxy.m in Sources */,
+				8A92D6A31765D73C00DF8E89 /* GCWebAddressAttribute.m in Sources */,
+				8A92D6A41765D73C00DF8E89 /* GCFaxNumberAttribute.m in Sources */,
+				8A92D6A51765D73C00DF8E89 /* GCEmailAddressAttribute.m in Sources */,
+				8A92D6B21765ED7100DF8E89 /* GCAddressStructureAttribute.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
