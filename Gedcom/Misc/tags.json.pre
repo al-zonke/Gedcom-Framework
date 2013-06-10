@@ -112,6 +112,7 @@
 		"validSubTags": [
                          { "name": "multimediaFormat", "min": 1, "max": 1 },
                          { "name": "title", "min": 0, "max": 1 },
+                         { "name": "file", "min": 0, "max": 1 },
                          { "groupName": "@note" },
                          { "name": "binaryObject", "min": 0, "max": 1 },
                          { "name": "userReferenceNumber", "min": 0, "max": "M" },
