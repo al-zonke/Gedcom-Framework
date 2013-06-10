@@ -7,11 +7,14 @@
 @class GCAddressAttribute;
 @class GCChangeInfoAttribute;
 @class GCDescriptiveNameAttribute;
+@class GCEmailAddressAttribute;
+@class GCFaxNumberAttribute;
 @class GCNoteEmbeddedAttribute;
 @class GCNoteReferenceRelationship;
 @class GCPhoneNumberAttribute;
 @class GCRecordIdNumberAttribute;
 @class GCUserReferenceNumberAttribute;
+@class GCWebAddressAttribute;
 
 /**
  
@@ -30,49 +33,87 @@
 
 // Properties:
 /// . 
-@property (nonatomic) GCDescriptiveNameAttribute *descriptiveName;
+@property (nonatomic, strong) GCDescriptiveNameAttribute *descriptiveName;
 
-/// . 
-@property (nonatomic) GCAddressAttribute *address;
+/// @name Accessing address structures
 
-/// . GCPhoneNumberAttribute
-@property (nonatomic) NSArray *phoneNumbers;
-/// . Contains instances of phoneNumbers
-@property (nonatomic) NSMutableArray *mutablePhoneNumbers;
+/// Property for accessing the following properties
+@property (nonatomic, strong) NSArray *addressStructures;
+
+/// @name Accessing address structures 
+
+///Also contained in addressStructures. . 
+@property (nonatomic, strong) GCAddressAttribute *address;
+
+/// @name Accessing address structures 
+
+///Also contained in addressStructures. . GCPhoneNumberAttribute
+@property (nonatomic, strong) NSArray *phoneNumbers;
+/// @name Accessing address structures 
+
+///Also contained in addressStructures. . Contains instances of phoneNumbers
+@property (nonatomic, strong) NSMutableArray *mutablePhoneNumbers;
+
+/// @name Accessing address structures 
+
+///Also contained in addressStructures. . GCEmailAddressAttribute
+@property (nonatomic, strong) NSArray *emailAddresses;
+/// @name Accessing address structures 
+
+///Also contained in addressStructures. . Contains instances of emailAddresses
+@property (nonatomic, strong) NSMutableArray *mutableEmailAddresses;
+
+/// @name Accessing address structures 
+
+///Also contained in addressStructures. . GCFaxNumberAttribute
+@property (nonatomic, strong) NSArray *faxNumbers;
+/// @name Accessing address structures 
+
+///Also contained in addressStructures. . Contains instances of faxNumbers
+@property (nonatomic, strong) NSMutableArray *mutableFaxNumbers;
+
+/// @name Accessing address structures 
+
+///Also contained in addressStructures. . GCWebAddressAttribute
+@property (nonatomic, strong) NSArray *webAddresses;
+/// @name Accessing address structures 
+
+///Also contained in addressStructures. . Contains instances of webAddresses
+@property (nonatomic, strong) NSMutableArray *mutableWebAddresses;
 
 /// @name Accessing notes
 
 /// Property for accessing the following properties
-@property (nonatomic) NSArray *notes;
+@property (nonatomic, strong) NSArray *notes;
 
 /// @name Accessing notes 
 
 ///Also contained in notes. . GCNoteReferenceRelationship
-@property (nonatomic) NSArray *noteReferences;
+@property (nonatomic, strong) NSArray *noteReferences;
 /// @name Accessing notes 
 
 ///Also contained in notes. . Contains instances of noteReferences
-@property (nonatomic) NSMutableArray *mutableNoteReferences;
+@property (nonatomic, strong) NSMutableArray *mutableNoteReferences;
 
 /// @name Accessing notes 
 
 ///Also contained in notes. . GCNoteEmbeddedAttribute
-@property (nonatomic) NSArray *noteEmbeddeds;
+@property (nonatomic, strong) NSArray *noteEmbeddeds;
 /// @name Accessing notes 
 
 ///Also contained in notes. . Contains instances of noteEmbeddeds
-@property (nonatomic) NSMutableArray *mutableNoteEmbeddeds;
+@property (nonatomic, strong) NSMutableArray *mutableNoteEmbeddeds;
 
 /// . GCUserReferenceNumberAttribute
-@property (nonatomic) NSArray *userReferenceNumbers;
+@property (nonatomic, strong) NSArray *userReferenceNumbers;
 /// . Contains instances of userReferenceNumbers
-@property (nonatomic) NSMutableArray *mutableUserReferenceNumbers;
+@property (nonatomic, strong) NSMutableArray *mutableUserReferenceNumbers;
 
 /// . 
-@property (nonatomic) GCRecordIdNumberAttribute *recordIdNumber;
+@property (nonatomic, strong) GCRecordIdNumberAttribute *recordIdNumber;
 
 /// . 
-@property (nonatomic) GCChangeInfoAttribute *changeInfo;
+@property (nonatomic, strong) GCChangeInfoAttribute *changeInfo;
 
 
 @end

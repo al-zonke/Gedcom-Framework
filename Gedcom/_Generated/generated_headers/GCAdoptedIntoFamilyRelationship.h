@@ -23,7 +23,7 @@
 
 // Properties:
 /// . 
-@property (nonatomic) GCAdoptedByWhichParentAttribute *adoptedByWhichParent;
+@property (nonatomic, strong) GCAdoptedByWhichParentAttribute *adoptedByWhichParent;
 
 
 @end

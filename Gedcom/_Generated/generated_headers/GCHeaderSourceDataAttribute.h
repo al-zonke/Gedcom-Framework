@@ -40,10 +40,10 @@
 
 // Properties:
 /// . 
-@property (nonatomic) GCDateAttribute *date;
+@property (nonatomic, strong) GCDateAttribute *date;
 
 /// . 
-@property (nonatomic) GCCopyrightAttribute *copyright;
+@property (nonatomic, strong) GCCopyrightAttribute *copyright;
 
 
 @end

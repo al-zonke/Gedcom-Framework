@@ -8,6 +8,9 @@
 	GCDescriptiveNameAttribute *_descriptiveName;
 	GCAddressAttribute *_address;
 	NSMutableArray *_phoneNumbers;
+	NSMutableArray *_emailAddresses;
+	NSMutableArray *_faxNumbers;
+	NSMutableArray *_webAddresses;
 	NSMutableArray *_multimediaReferences;
 	NSMutableArray *_multimediaEmbeddeds;
 	NSMutableArray *_languages;
@@ -37,6 +40,9 @@
 	if (self) {
 		// initialize ivars, if any:
 		_phoneNumbers = [NSMutableArray array];
+		_emailAddresses = [NSMutableArray array];
+		_faxNumbers = [NSMutableArray array];
+		_webAddresses = [NSMutableArray array];
 		_multimediaReferences = [NSMutableArray array];
 		_multimediaEmbeddeds = [NSMutableArray array];
 		_languages = [NSMutableArray array];
@@ -49,12 +55,34 @@
 
 // Properties:
 @dynamic descriptiveName;
+@dynamic addressStructures;
 @dynamic address;
 @synthesize phoneNumbers = _phoneNumbers;
 @dynamic mutablePhoneNumbers;
 - (NSMutableArray *)mutablePhoneNumbers
 {
 	return [self mutableArrayValueForKey:@"phoneNumbers"];
+}
+
+@synthesize emailAddresses = _emailAddresses;
+@dynamic mutableEmailAddresses;
+- (NSMutableArray *)mutableEmailAddresses
+{
+	return [self mutableArrayValueForKey:@"emailAddresses"];
+}
+
+@synthesize faxNumbers = _faxNumbers;
+@dynamic mutableFaxNumbers;
+- (NSMutableArray *)mutableFaxNumbers
+{
+	return [self mutableArrayValueForKey:@"faxNumbers"];
+}
+
+@synthesize webAddresses = _webAddresses;
+@dynamic mutableWebAddresses;
+- (NSMutableArray *)mutableWebAddresses
+{
+	return [self mutableArrayValueForKey:@"webAddresses"];
 }
 
 @dynamic multimedias;

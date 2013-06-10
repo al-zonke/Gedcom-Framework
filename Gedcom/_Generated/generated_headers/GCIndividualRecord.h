@@ -84,524 +84,524 @@
 
 // Properties:
 /// . 
-@property (nonatomic) GCRestrictionNoticeAttribute *restrictionNotice;
+@property (nonatomic, strong) GCRestrictionNoticeAttribute *restrictionNotice;
 
 /// . GCPersonalNameAttribute
-@property (nonatomic) NSArray *personalNames;
+@property (nonatomic, strong) NSArray *personalNames;
 /// . Contains instances of personalNames
-@property (nonatomic) NSMutableArray *mutablePersonalNames;
+@property (nonatomic, strong) NSMutableArray *mutablePersonalNames;
 
 /// . 
-@property (nonatomic) GCSexAttribute *sex;
+@property (nonatomic, strong) GCSexAttribute *sex;
 
 /// @name Accessing individual events
 
 /// Property for accessing the following properties
-@property (nonatomic) NSArray *individualEvents;
+@property (nonatomic, strong) NSArray *individualEvents;
 
 /// @name Accessing individual events 
 
 ///Also contained in individualEvents. . GCBirthAttribute
-@property (nonatomic) NSArray *births;
+@property (nonatomic, strong) NSArray *births;
 /// @name Accessing individual events 
 
 ///Also contained in individualEvents. . Contains instances of births
-@property (nonatomic) NSMutableArray *mutableBirths;
+@property (nonatomic, strong) NSMutableArray *mutableBirths;
 
 /// @name Accessing individual events 
 
 ///Also contained in individualEvents. . GCChristeningAttribute
-@property (nonatomic) NSArray *christenings;
+@property (nonatomic, strong) NSArray *christenings;
 /// @name Accessing individual events 
 
 ///Also contained in individualEvents. . Contains instances of christenings
-@property (nonatomic) NSMutableArray *mutableChristenings;
+@property (nonatomic, strong) NSMutableArray *mutableChristenings;
 
 /// @name Accessing individual events 
 
 ///Also contained in individualEvents. . GCDeathAttribute
-@property (nonatomic) NSArray *deaths;
+@property (nonatomic, strong) NSArray *deaths;
 /// @name Accessing individual events 
 
 ///Also contained in individualEvents. . Contains instances of deaths
-@property (nonatomic) NSMutableArray *mutableDeaths;
+@property (nonatomic, strong) NSMutableArray *mutableDeaths;
 
 /// @name Accessing individual events 
 
 ///Also contained in individualEvents. . GCBurialAttribute
-@property (nonatomic) NSArray *burials;
+@property (nonatomic, strong) NSArray *burials;
 /// @name Accessing individual events 
 
 ///Also contained in individualEvents. . Contains instances of burials
-@property (nonatomic) NSMutableArray *mutableBurials;
+@property (nonatomic, strong) NSMutableArray *mutableBurials;
 
 /// @name Accessing individual events 
 
 ///Also contained in individualEvents. . GCCremationAttribute
-@property (nonatomic) NSArray *cremations;
+@property (nonatomic, strong) NSArray *cremations;
 /// @name Accessing individual events 
 
 ///Also contained in individualEvents. . Contains instances of cremations
-@property (nonatomic) NSMutableArray *mutableCremations;
+@property (nonatomic, strong) NSMutableArray *mutableCremations;
 
 /// @name Accessing individual events 
 
 ///Also contained in individualEvents. . GCAdoptionAttribute
-@property (nonatomic) NSArray *adoptions;
+@property (nonatomic, strong) NSArray *adoptions;
 /// @name Accessing individual events 
 
 ///Also contained in individualEvents. . Contains instances of adoptions
-@property (nonatomic) NSMutableArray *mutableAdoptions;
+@property (nonatomic, strong) NSMutableArray *mutableAdoptions;
 
 /// @name Accessing individual events 
 
 ///Also contained in individualEvents. . GCBaptismAttribute
-@property (nonatomic) NSArray *baptisms;
+@property (nonatomic, strong) NSArray *baptisms;
 /// @name Accessing individual events 
 
 ///Also contained in individualEvents. . Contains instances of baptisms
-@property (nonatomic) NSMutableArray *mutableBaptisms;
+@property (nonatomic, strong) NSMutableArray *mutableBaptisms;
 
 /// @name Accessing individual events 
 
 ///Also contained in individualEvents. . GCBarMitzvahAttribute
-@property (nonatomic) NSArray *barMitzvahs;
+@property (nonatomic, strong) NSArray *barMitzvahs;
 /// @name Accessing individual events 
 
 ///Also contained in individualEvents. . Contains instances of barMitzvahs
-@property (nonatomic) NSMutableArray *mutableBarMitzvahs;
+@property (nonatomic, strong) NSMutableArray *mutableBarMitzvahs;
 
 /// @name Accessing individual events 
 
 ///Also contained in individualEvents. . GCBasMitzvahAttribute
-@property (nonatomic) NSArray *basMitzvahs;
+@property (nonatomic, strong) NSArray *basMitzvahs;
 /// @name Accessing individual events 
 
 ///Also contained in individualEvents. . Contains instances of basMitzvahs
-@property (nonatomic) NSMutableArray *mutableBasMitzvahs;
+@property (nonatomic, strong) NSMutableArray *mutableBasMitzvahs;
 
 /// @name Accessing individual events 
 
 ///Also contained in individualEvents. . GCBlessingAttribute
-@property (nonatomic) NSArray *blessings;
+@property (nonatomic, strong) NSArray *blessings;
 /// @name Accessing individual events 
 
 ///Also contained in individualEvents. . Contains instances of blessings
-@property (nonatomic) NSMutableArray *mutableBlessings;
+@property (nonatomic, strong) NSMutableArray *mutableBlessings;
 
 /// @name Accessing individual events 
 
 ///Also contained in individualEvents. . GCAdultChristeningAttribute
-@property (nonatomic) NSArray *adultChristenings;
+@property (nonatomic, strong) NSArray *adultChristenings;
 /// @name Accessing individual events 
 
 ///Also contained in individualEvents. . Contains instances of adultChristenings
-@property (nonatomic) NSMutableArray *mutableAdultChristenings;
+@property (nonatomic, strong) NSMutableArray *mutableAdultChristenings;
 
 /// @name Accessing individual events 
 
 ///Also contained in individualEvents. . GCConfirmationAttribute
-@property (nonatomic) NSArray *confirmations;
+@property (nonatomic, strong) NSArray *confirmations;
 /// @name Accessing individual events 
 
 ///Also contained in individualEvents. . Contains instances of confirmations
-@property (nonatomic) NSMutableArray *mutableConfirmations;
+@property (nonatomic, strong) NSMutableArray *mutableConfirmations;
 
 /// @name Accessing individual events 
 
 ///Also contained in individualEvents. . GCFirstCommunionAttribute
-@property (nonatomic) NSArray *firstCommunions;
+@property (nonatomic, strong) NSArray *firstCommunions;
 /// @name Accessing individual events 
 
 ///Also contained in individualEvents. . Contains instances of firstCommunions
-@property (nonatomic) NSMutableArray *mutableFirstCommunions;
+@property (nonatomic, strong) NSMutableArray *mutableFirstCommunions;
 
 /// @name Accessing individual events 
 
 ///Also contained in individualEvents. . GCOrdinationAttribute
-@property (nonatomic) NSArray *ordinations;
+@property (nonatomic, strong) NSArray *ordinations;
 /// @name Accessing individual events 
 
 ///Also contained in individualEvents. . Contains instances of ordinations
-@property (nonatomic) NSMutableArray *mutableOrdinations;
+@property (nonatomic, strong) NSMutableArray *mutableOrdinations;
 
 /// @name Accessing individual events 
 
 ///Also contained in individualEvents. . GCNaturalizationAttribute
-@property (nonatomic) NSArray *naturalizations;
+@property (nonatomic, strong) NSArray *naturalizations;
 /// @name Accessing individual events 
 
 ///Also contained in individualEvents. . Contains instances of naturalizations
-@property (nonatomic) NSMutableArray *mutableNaturalizations;
+@property (nonatomic, strong) NSMutableArray *mutableNaturalizations;
 
 /// @name Accessing individual events 
 
 ///Also contained in individualEvents. . GCEmigrationAttribute
-@property (nonatomic) NSArray *emigrations;
+@property (nonatomic, strong) NSArray *emigrations;
 /// @name Accessing individual events 
 
 ///Also contained in individualEvents. . Contains instances of emigrations
-@property (nonatomic) NSMutableArray *mutableEmigrations;
+@property (nonatomic, strong) NSMutableArray *mutableEmigrations;
 
 /// @name Accessing individual events 
 
 ///Also contained in individualEvents. . GCImmigrationAttribute
-@property (nonatomic) NSArray *immigrations;
+@property (nonatomic, strong) NSArray *immigrations;
 /// @name Accessing individual events 
 
 ///Also contained in individualEvents. . Contains instances of immigrations
-@property (nonatomic) NSMutableArray *mutableImmigrations;
+@property (nonatomic, strong) NSMutableArray *mutableImmigrations;
 
 /// @name Accessing individual events 
 
 ///Also contained in individualEvents. . GCCensusAttribute
-@property (nonatomic) NSArray *censuses;
+@property (nonatomic, strong) NSArray *censuses;
 /// @name Accessing individual events 
 
 ///Also contained in individualEvents. . Contains instances of censuses
-@property (nonatomic) NSMutableArray *mutableCensuses;
+@property (nonatomic, strong) NSMutableArray *mutableCensuses;
 
 /// @name Accessing individual events 
 
 ///Also contained in individualEvents. . GCProbateAttribute
-@property (nonatomic) NSArray *probates;
+@property (nonatomic, strong) NSArray *probates;
 /// @name Accessing individual events 
 
 ///Also contained in individualEvents. . Contains instances of probates
-@property (nonatomic) NSMutableArray *mutableProbates;
+@property (nonatomic, strong) NSMutableArray *mutableProbates;
 
 /// @name Accessing individual events 
 
 ///Also contained in individualEvents. . GCWillAttribute
-@property (nonatomic) NSArray *wills;
+@property (nonatomic, strong) NSArray *wills;
 /// @name Accessing individual events 
 
 ///Also contained in individualEvents. . Contains instances of wills
-@property (nonatomic) NSMutableArray *mutableWills;
+@property (nonatomic, strong) NSMutableArray *mutableWills;
 
 /// @name Accessing individual events 
 
 ///Also contained in individualEvents. . GCGraduationAttribute
-@property (nonatomic) NSArray *graduations;
+@property (nonatomic, strong) NSArray *graduations;
 /// @name Accessing individual events 
 
 ///Also contained in individualEvents. . Contains instances of graduations
-@property (nonatomic) NSMutableArray *mutableGraduations;
+@property (nonatomic, strong) NSMutableArray *mutableGraduations;
 
 /// @name Accessing individual events 
 
 ///Also contained in individualEvents. . GCRetirementAttribute
-@property (nonatomic) NSArray *retirements;
+@property (nonatomic, strong) NSArray *retirements;
 /// @name Accessing individual events 
 
 ///Also contained in individualEvents. . Contains instances of retirements
-@property (nonatomic) NSMutableArray *mutableRetirements;
+@property (nonatomic, strong) NSMutableArray *mutableRetirements;
 
 /// @name Accessing individual events 
 
 ///Also contained in individualEvents. . GCGenericEventAttribute
-@property (nonatomic) NSArray *genericEvents;
+@property (nonatomic, strong) NSArray *genericEvents;
 /// @name Accessing individual events 
 
 ///Also contained in individualEvents. . Contains instances of genericEvents
-@property (nonatomic) NSMutableArray *mutableGenericEvents;
+@property (nonatomic, strong) NSMutableArray *mutableGenericEvents;
 
 /// @name Accessing individual attributes
 
 /// Property for accessing the following properties
-@property (nonatomic) NSArray *individualAttributes;
+@property (nonatomic, strong) NSArray *individualAttributes;
 
 /// @name Accessing individual attributes 
 
 ///Also contained in individualAttributes. . GCCasteAttribute
-@property (nonatomic) NSArray *castes;
+@property (nonatomic, strong) NSArray *castes;
 /// @name Accessing individual attributes 
 
 ///Also contained in individualAttributes. . Contains instances of castes
-@property (nonatomic) NSMutableArray *mutableCastes;
+@property (nonatomic, strong) NSMutableArray *mutableCastes;
 
 /// @name Accessing individual attributes 
 
 ///Also contained in individualAttributes. . GCPhysicalDescriptionAttribute
-@property (nonatomic) NSArray *physicalDescriptions;
+@property (nonatomic, strong) NSArray *physicalDescriptions;
 /// @name Accessing individual attributes 
 
 ///Also contained in individualAttributes. . Contains instances of physicalDescriptions
-@property (nonatomic) NSMutableArray *mutablePhysicalDescriptions;
+@property (nonatomic, strong) NSMutableArray *mutablePhysicalDescriptions;
 
 /// @name Accessing individual attributes 
 
 ///Also contained in individualAttributes. . GCGenerationsOfDescendantsAttribute
-@property (nonatomic) NSArray *generationsOfDescendantss;
+@property (nonatomic, strong) NSArray *generationsOfDescendantss;
 /// @name Accessing individual attributes 
 
 ///Also contained in individualAttributes. . Contains instances of generationsOfDescendantss
-@property (nonatomic) NSMutableArray *mutableGenerationsOfDescendantss;
+@property (nonatomic, strong) NSMutableArray *mutableGenerationsOfDescendantss;
 
 /// @name Accessing individual attributes 
 
 ///Also contained in individualAttributes. . GCEducationAttribute
-@property (nonatomic) NSArray *educations;
+@property (nonatomic, strong) NSArray *educations;
 /// @name Accessing individual attributes 
 
 ///Also contained in individualAttributes. . Contains instances of educations
-@property (nonatomic) NSMutableArray *mutableEducations;
+@property (nonatomic, strong) NSMutableArray *mutableEducations;
 
 /// @name Accessing individual attributes 
 
 ///Also contained in individualAttributes. . GCIdentNumberAttribute
-@property (nonatomic) NSArray *identNumbers;
+@property (nonatomic, strong) NSArray *identNumbers;
 /// @name Accessing individual attributes 
 
 ///Also contained in individualAttributes. . Contains instances of identNumbers
-@property (nonatomic) NSMutableArray *mutableIdentNumbers;
+@property (nonatomic, strong) NSMutableArray *mutableIdentNumbers;
 
 /// @name Accessing individual attributes 
 
 ///Also contained in individualAttributes. . GCNationalityAttribute
-@property (nonatomic) NSArray *nationalities;
+@property (nonatomic, strong) NSArray *nationalities;
 /// @name Accessing individual attributes 
 
 ///Also contained in individualAttributes. . Contains instances of nationalities
-@property (nonatomic) NSMutableArray *mutableNationalities;
+@property (nonatomic, strong) NSMutableArray *mutableNationalities;
 
 /// @name Accessing individual attributes 
 
 ///Also contained in individualAttributes. . GCNumberOfChildrenAttribute
-@property (nonatomic) NSArray *numberOfChildrens;
+@property (nonatomic, strong) NSArray *numberOfChildrens;
 /// @name Accessing individual attributes 
 
 ///Also contained in individualAttributes. . Contains instances of numberOfChildrens
-@property (nonatomic) NSMutableArray *mutableNumberOfChildrens;
+@property (nonatomic, strong) NSMutableArray *mutableNumberOfChildrens;
 
 /// @name Accessing individual attributes 
 
 ///Also contained in individualAttributes. . GCNumberOfMarriagesAttribute
-@property (nonatomic) NSArray *numberOfMarriagess;
+@property (nonatomic, strong) NSArray *numberOfMarriagess;
 /// @name Accessing individual attributes 
 
 ///Also contained in individualAttributes. . Contains instances of numberOfMarriagess
-@property (nonatomic) NSMutableArray *mutableNumberOfMarriagess;
+@property (nonatomic, strong) NSMutableArray *mutableNumberOfMarriagess;
 
 /// @name Accessing individual attributes 
 
 ///Also contained in individualAttributes. . GCOccupationAttribute
-@property (nonatomic) NSArray *occupations;
+@property (nonatomic, strong) NSArray *occupations;
 /// @name Accessing individual attributes 
 
 ///Also contained in individualAttributes. . Contains instances of occupations
-@property (nonatomic) NSMutableArray *mutableOccupations;
+@property (nonatomic, strong) NSMutableArray *mutableOccupations;
 
 /// @name Accessing individual attributes 
 
 ///Also contained in individualAttributes. . GCPropertyOwnedAttribute
-@property (nonatomic) NSArray *propertyOwneds;
+@property (nonatomic, strong) NSArray *propertyOwneds;
 /// @name Accessing individual attributes 
 
 ///Also contained in individualAttributes. . Contains instances of propertyOwneds
-@property (nonatomic) NSMutableArray *mutablePropertyOwneds;
+@property (nonatomic, strong) NSMutableArray *mutablePropertyOwneds;
 
 /// @name Accessing individual attributes 
 
 ///Also contained in individualAttributes. . GCReligionAttribute
-@property (nonatomic) NSArray *religions;
+@property (nonatomic, strong) NSArray *religions;
 /// @name Accessing individual attributes 
 
 ///Also contained in individualAttributes. . Contains instances of religions
-@property (nonatomic) NSMutableArray *mutableReligions;
+@property (nonatomic, strong) NSMutableArray *mutableReligions;
 
 /// @name Accessing individual attributes 
 
 ///Also contained in individualAttributes. . GCResidenceAttribute
-@property (nonatomic) NSArray *residences;
+@property (nonatomic, strong) NSArray *residences;
 /// @name Accessing individual attributes 
 
 ///Also contained in individualAttributes. . Contains instances of residences
-@property (nonatomic) NSMutableArray *mutableResidences;
+@property (nonatomic, strong) NSMutableArray *mutableResidences;
 
 /// @name Accessing individual attributes 
 
 ///Also contained in individualAttributes. . GCSocialSecurityNumberAttribute
-@property (nonatomic) NSArray *socialSecurityNumbers;
+@property (nonatomic, strong) NSArray *socialSecurityNumbers;
 /// @name Accessing individual attributes 
 
 ///Also contained in individualAttributes. . Contains instances of socialSecurityNumbers
-@property (nonatomic) NSMutableArray *mutableSocialSecurityNumbers;
+@property (nonatomic, strong) NSMutableArray *mutableSocialSecurityNumbers;
 
 /// @name Accessing individual attributes 
 
 ///Also contained in individualAttributes. . GCTitleAttribute
-@property (nonatomic) NSArray *titles;
+@property (nonatomic, strong) NSArray *titles;
 /// @name Accessing individual attributes 
 
 ///Also contained in individualAttributes. . Contains instances of titles
-@property (nonatomic) NSMutableArray *mutableTitles;
+@property (nonatomic, strong) NSMutableArray *mutableTitles;
 
 /// @name Accessing individual lds ordinances
 
 /// Property for accessing the following properties
-@property (nonatomic) NSArray *individualLDSOrdinances;
+@property (nonatomic, strong) NSArray *individualLDSOrdinances;
 
 /// @name Accessing individual lds ordinances 
 
 ///Also contained in individualLDSOrdinances. . GCLDSBaptismAttribute
-@property (nonatomic) NSArray *lDSBaptisms;
+@property (nonatomic, strong) NSArray *lDSBaptisms;
 /// @name Accessing individual lds ordinances 
 
 ///Also contained in individualLDSOrdinances. . Contains instances of lDSBaptisms
-@property (nonatomic) NSMutableArray *mutableLDSBaptisms;
+@property (nonatomic, strong) NSMutableArray *mutableLDSBaptisms;
 
 /// @name Accessing individual lds ordinances 
 
 ///Also contained in individualLDSOrdinances. . GCLDSConfirmationAttribute
-@property (nonatomic) NSArray *lDSConfirmations;
+@property (nonatomic, strong) NSArray *lDSConfirmations;
 /// @name Accessing individual lds ordinances 
 
 ///Also contained in individualLDSOrdinances. . Contains instances of lDSConfirmations
-@property (nonatomic) NSMutableArray *mutableLDSConfirmations;
+@property (nonatomic, strong) NSMutableArray *mutableLDSConfirmations;
 
 /// @name Accessing individual lds ordinances 
 
 ///Also contained in individualLDSOrdinances. . GCLDSEndowmentAttribute
-@property (nonatomic) NSArray *lDSEndowments;
+@property (nonatomic, strong) NSArray *lDSEndowments;
 /// @name Accessing individual lds ordinances 
 
 ///Also contained in individualLDSOrdinances. . Contains instances of lDSEndowments
-@property (nonatomic) NSMutableArray *mutableLDSEndowments;
+@property (nonatomic, strong) NSMutableArray *mutableLDSEndowments;
 
 /// @name Accessing individual lds ordinances 
 
 ///Also contained in individualLDSOrdinances. . GCLDSSealingChildAttribute
-@property (nonatomic) NSArray *lDSSealingChilds;
+@property (nonatomic, strong) NSArray *lDSSealingChilds;
 /// @name Accessing individual lds ordinances 
 
 ///Also contained in individualLDSOrdinances. . Contains instances of lDSSealingChilds
-@property (nonatomic) NSMutableArray *mutableLDSSealingChilds;
+@property (nonatomic, strong) NSMutableArray *mutableLDSSealingChilds;
 
 /// . GCChildInFamilyRelationship
-@property (nonatomic) NSArray *childInFamilies;
+@property (nonatomic, strong) NSArray *childInFamilies;
 /// . Contains instances of childInFamilies
-@property (nonatomic) NSMutableArray *mutableChildInFamilies;
+@property (nonatomic, strong) NSMutableArray *mutableChildInFamilies;
 
 /// . GCSpouseInFamilyRelationship
-@property (nonatomic) NSArray *spouseInFamilies;
+@property (nonatomic, strong) NSArray *spouseInFamilies;
 /// . Contains instances of spouseInFamilies
-@property (nonatomic) NSMutableArray *mutableSpouseInFamilies;
+@property (nonatomic, strong) NSMutableArray *mutableSpouseInFamilies;
 
 /// . GCSubmitterReferenceRelationship
-@property (nonatomic) NSArray *submitterReferences;
+@property (nonatomic, strong) NSArray *submitterReferences;
 /// . Contains instances of submitterReferences
-@property (nonatomic) NSMutableArray *mutableSubmitterReferences;
+@property (nonatomic, strong) NSMutableArray *mutableSubmitterReferences;
 
 /// . GCAssociationRelationship
-@property (nonatomic) NSArray *associations;
+@property (nonatomic, strong) NSArray *associations;
 /// . Contains instances of associations
-@property (nonatomic) NSMutableArray *mutableAssociations;
+@property (nonatomic, strong) NSMutableArray *mutableAssociations;
 
 /// . GCAliasRelationship
-@property (nonatomic) NSArray *aliases;
+@property (nonatomic, strong) NSArray *aliases;
 /// . Contains instances of aliases
-@property (nonatomic) NSMutableArray *mutableAliases;
+@property (nonatomic, strong) NSMutableArray *mutableAliases;
 
 /// . GCAncestorInterestRelationship
-@property (nonatomic) NSArray *ancestorInterests;
+@property (nonatomic, strong) NSArray *ancestorInterests;
 /// . Contains instances of ancestorInterests
-@property (nonatomic) NSMutableArray *mutableAncestorInterests;
+@property (nonatomic, strong) NSMutableArray *mutableAncestorInterests;
 
 /// . GCDescendantInterestRelationship
-@property (nonatomic) NSArray *descendantInterests;
+@property (nonatomic, strong) NSArray *descendantInterests;
 /// . Contains instances of descendantInterests
-@property (nonatomic) NSMutableArray *mutableDescendantInterests;
+@property (nonatomic, strong) NSMutableArray *mutableDescendantInterests;
 
 /// @name Accessing sources
 
 /// Property for accessing the following properties
-@property (nonatomic) NSArray *sources;
+@property (nonatomic, strong) NSArray *sources;
 
 /// @name Accessing sources 
 
 ///Also contained in sources. . GCSourceCitationRelationship
-@property (nonatomic) NSArray *sourceCitations;
+@property (nonatomic, strong) NSArray *sourceCitations;
 /// @name Accessing sources 
 
 ///Also contained in sources. . Contains instances of sourceCitations
-@property (nonatomic) NSMutableArray *mutableSourceCitations;
+@property (nonatomic, strong) NSMutableArray *mutableSourceCitations;
 
 /// @name Accessing sources 
 
 ///Also contained in sources. . GCSourceEmbeddedAttribute
-@property (nonatomic) NSArray *sourceEmbeddeds;
+@property (nonatomic, strong) NSArray *sourceEmbeddeds;
 /// @name Accessing sources 
 
 ///Also contained in sources. . Contains instances of sourceEmbeddeds
-@property (nonatomic) NSMutableArray *mutableSourceEmbeddeds;
+@property (nonatomic, strong) NSMutableArray *mutableSourceEmbeddeds;
 
 /// @name Accessing multimedias
 
 /// Property for accessing the following properties
-@property (nonatomic) NSArray *multimedias;
+@property (nonatomic, strong) NSArray *multimedias;
 
 /// @name Accessing multimedias 
 
 ///Also contained in multimedias. . GCMultimediaReferenceRelationship
-@property (nonatomic) NSArray *multimediaReferences;
+@property (nonatomic, strong) NSArray *multimediaReferences;
 /// @name Accessing multimedias 
 
 ///Also contained in multimedias. . Contains instances of multimediaReferences
-@property (nonatomic) NSMutableArray *mutableMultimediaReferences;
+@property (nonatomic, strong) NSMutableArray *mutableMultimediaReferences;
 
 /// @name Accessing multimedias 
 
 ///Also contained in multimedias. . GCMultimediaEmbeddedAttribute
-@property (nonatomic) NSArray *multimediaEmbeddeds;
+@property (nonatomic, strong) NSArray *multimediaEmbeddeds;
 /// @name Accessing multimedias 
 
 ///Also contained in multimedias. . Contains instances of multimediaEmbeddeds
-@property (nonatomic) NSMutableArray *mutableMultimediaEmbeddeds;
+@property (nonatomic, strong) NSMutableArray *mutableMultimediaEmbeddeds;
 
 /// @name Accessing notes
 
 /// Property for accessing the following properties
-@property (nonatomic) NSArray *notes;
+@property (nonatomic, strong) NSArray *notes;
 
 /// @name Accessing notes 
 
 ///Also contained in notes. . GCNoteReferenceRelationship
-@property (nonatomic) NSArray *noteReferences;
+@property (nonatomic, strong) NSArray *noteReferences;
 /// @name Accessing notes 
 
 ///Also contained in notes. . Contains instances of noteReferences
-@property (nonatomic) NSMutableArray *mutableNoteReferences;
+@property (nonatomic, strong) NSMutableArray *mutableNoteReferences;
 
 /// @name Accessing notes 
 
 ///Also contained in notes. . GCNoteEmbeddedAttribute
-@property (nonatomic) NSArray *noteEmbeddeds;
+@property (nonatomic, strong) NSArray *noteEmbeddeds;
 /// @name Accessing notes 
 
 ///Also contained in notes. . Contains instances of noteEmbeddeds
-@property (nonatomic) NSMutableArray *mutableNoteEmbeddeds;
+@property (nonatomic, strong) NSMutableArray *mutableNoteEmbeddeds;
 
 /// . GCRecordFileNumberAttribute
-@property (nonatomic) NSArray *recordFileNumbers;
+@property (nonatomic, strong) NSArray *recordFileNumbers;
 /// . Contains instances of recordFileNumbers
-@property (nonatomic) NSMutableArray *mutableRecordFileNumbers;
+@property (nonatomic, strong) NSMutableArray *mutableRecordFileNumbers;
 
 /// . GCAncestralFileNumberAttribute
-@property (nonatomic) NSArray *ancestralFileNumbers;
+@property (nonatomic, strong) NSArray *ancestralFileNumbers;
 /// . Contains instances of ancestralFileNumbers
-@property (nonatomic) NSMutableArray *mutableAncestralFileNumbers;
+@property (nonatomic, strong) NSMutableArray *mutableAncestralFileNumbers;
 
 /// . GCUserReferenceNumberAttribute
-@property (nonatomic) NSArray *userReferenceNumbers;
+@property (nonatomic, strong) NSArray *userReferenceNumbers;
 /// . Contains instances of userReferenceNumbers
-@property (nonatomic) NSMutableArray *mutableUserReferenceNumbers;
+@property (nonatomic, strong) NSMutableArray *mutableUserReferenceNumbers;
 
 /// . 
-@property (nonatomic) GCRecordIdNumberAttribute *recordIdNumber;
+@property (nonatomic, strong) GCRecordIdNumberAttribute *recordIdNumber;
 
 /// . 
-@property (nonatomic) GCChangeInfoAttribute *changeInfo;
+@property (nonatomic, strong) GCChangeInfoAttribute *changeInfo;
 
 
 @end

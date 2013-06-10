@@ -39,7 +39,7 @@
 
 // Properties:
 /// . 
-@property (nonatomic) GCLDSBaptismStatusAttribute *lDSBaptismStatus;
+@property (nonatomic, strong) GCLDSBaptismStatusAttribute *lDSBaptismStatus;
 
 
 @end

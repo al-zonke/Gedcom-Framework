@@ -8,6 +8,8 @@
 @class GCAncestralFileNumberAttribute;
 @class GCChangeInfoAttribute;
 @class GCDescriptiveNameAttribute;
+@class GCEmailAddressAttribute;
+@class GCFaxNumberAttribute;
 @class GCLanguageAttribute;
 @class GCMultimediaEmbeddedAttribute;
 @class GCMultimediaReferenceRelationship;
@@ -15,6 +17,7 @@
 @class GCRecordFileNumberAttribute;
 @class GCRecordIdNumberAttribute;
 @class GCUserReferenceNumberAttribute;
+@class GCWebAddressAttribute;
 
 /**
  The submitter record identifies an individual or organization that contributed information contained in the GEDCOM transmission. All records in the transmission are assumed to be submitted by the SUBMITTER referenced in the HEADer, unless a SUBMitter reference inside a specific record points at a different SUBMITTER record.
@@ -33,60 +36,98 @@
 
 // Properties:
 /// .  NB: required property.
-@property (nonatomic) GCDescriptiveNameAttribute *descriptiveName;
+@property (nonatomic, strong) GCDescriptiveNameAttribute *descriptiveName;
 
-/// . 
-@property (nonatomic) GCAddressAttribute *address;
+/// @name Accessing address structures
 
-/// . GCPhoneNumberAttribute
-@property (nonatomic) NSArray *phoneNumbers;
-/// . Contains instances of phoneNumbers
-@property (nonatomic) NSMutableArray *mutablePhoneNumbers;
+/// Property for accessing the following properties
+@property (nonatomic, strong) NSArray *addressStructures;
+
+/// @name Accessing address structures 
+
+///Also contained in addressStructures. . 
+@property (nonatomic, strong) GCAddressAttribute *address;
+
+/// @name Accessing address structures 
+
+///Also contained in addressStructures. . GCPhoneNumberAttribute
+@property (nonatomic, strong) NSArray *phoneNumbers;
+/// @name Accessing address structures 
+
+///Also contained in addressStructures. . Contains instances of phoneNumbers
+@property (nonatomic, strong) NSMutableArray *mutablePhoneNumbers;
+
+/// @name Accessing address structures 
+
+///Also contained in addressStructures. . GCEmailAddressAttribute
+@property (nonatomic, strong) NSArray *emailAddresses;
+/// @name Accessing address structures 
+
+///Also contained in addressStructures. . Contains instances of emailAddresses
+@property (nonatomic, strong) NSMutableArray *mutableEmailAddresses;
+
+/// @name Accessing address structures 
+
+///Also contained in addressStructures. . GCFaxNumberAttribute
+@property (nonatomic, strong) NSArray *faxNumbers;
+/// @name Accessing address structures 
+
+///Also contained in addressStructures. . Contains instances of faxNumbers
+@property (nonatomic, strong) NSMutableArray *mutableFaxNumbers;
+
+/// @name Accessing address structures 
+
+///Also contained in addressStructures. . GCWebAddressAttribute
+@property (nonatomic, strong) NSArray *webAddresses;
+/// @name Accessing address structures 
+
+///Also contained in addressStructures. . Contains instances of webAddresses
+@property (nonatomic, strong) NSMutableArray *mutableWebAddresses;
 
 /// @name Accessing multimedias
 
 /// Property for accessing the following properties
-@property (nonatomic) NSArray *multimedias;
+@property (nonatomic, strong) NSArray *multimedias;
 
 /// @name Accessing multimedias 
 
 ///Also contained in multimedias. . GCMultimediaReferenceRelationship
-@property (nonatomic) NSArray *multimediaReferences;
+@property (nonatomic, strong) NSArray *multimediaReferences;
 /// @name Accessing multimedias 
 
 ///Also contained in multimedias. . Contains instances of multimediaReferences
-@property (nonatomic) NSMutableArray *mutableMultimediaReferences;
+@property (nonatomic, strong) NSMutableArray *mutableMultimediaReferences;
 
 /// @name Accessing multimedias 
 
 ///Also contained in multimedias. . GCMultimediaEmbeddedAttribute
-@property (nonatomic) NSArray *multimediaEmbeddeds;
+@property (nonatomic, strong) NSArray *multimediaEmbeddeds;
 /// @name Accessing multimedias 
 
 ///Also contained in multimedias. . Contains instances of multimediaEmbeddeds
-@property (nonatomic) NSMutableArray *mutableMultimediaEmbeddeds;
+@property (nonatomic, strong) NSMutableArray *mutableMultimediaEmbeddeds;
 
 /// . GCLanguageAttribute
-@property (nonatomic) NSArray *languages;
+@property (nonatomic, strong) NSArray *languages;
 /// . Contains instances of languages
-@property (nonatomic) NSMutableArray *mutableLanguages;
+@property (nonatomic, strong) NSMutableArray *mutableLanguages;
 
 /// . 
-@property (nonatomic) GCRecordFileNumberAttribute *recordFileNumber;
+@property (nonatomic, strong) GCRecordFileNumberAttribute *recordFileNumber;
 
 /// . 
-@property (nonatomic) GCAncestralFileNumberAttribute *ancestralFileNumber;
+@property (nonatomic, strong) GCAncestralFileNumberAttribute *ancestralFileNumber;
 
 /// . GCUserReferenceNumberAttribute
-@property (nonatomic) NSArray *userReferenceNumbers;
+@property (nonatomic, strong) NSArray *userReferenceNumbers;
 /// . Contains instances of userReferenceNumbers
-@property (nonatomic) NSMutableArray *mutableUserReferenceNumbers;
+@property (nonatomic, strong) NSMutableArray *mutableUserReferenceNumbers;
 
 /// . 
-@property (nonatomic) GCRecordIdNumberAttribute *recordIdNumber;
+@property (nonatomic, strong) GCRecordIdNumberAttribute *recordIdNumber;
 
 /// . 
-@property (nonatomic) GCChangeInfoAttribute *changeInfo;
+@property (nonatomic, strong) GCChangeInfoAttribute *changeInfo;
 
 
 @end

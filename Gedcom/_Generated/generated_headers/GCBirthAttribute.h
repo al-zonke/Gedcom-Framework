@@ -39,7 +39,7 @@
 
 // Properties:
 /// . 
-@property (nonatomic) GCBornToFamilyRelationship *bornToFamily;
+@property (nonatomic, strong) GCBornToFamilyRelationship *bornToFamily;
 
 
 @end

@@ -40,10 +40,10 @@
 
 // Properties:
 /// . 
-@property (nonatomic) GCDateAttribute *date;
+@property (nonatomic, strong) GCDateAttribute *date;
 
 /// . 
-@property (nonatomic) GCPlaceAttribute *place;
+@property (nonatomic, strong) GCPlaceAttribute *place;
 
 
 @end

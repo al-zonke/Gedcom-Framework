@@ -29,36 +29,36 @@
 /// @name Accessing sources
 
 /// Property for accessing the following properties
-@property (nonatomic) NSArray *sources;
+@property (nonatomic, strong) NSArray *sources;
 
 /// @name Accessing sources 
 
 ///Also contained in sources. . GCSourceCitationRelationship
-@property (nonatomic) NSArray *sourceCitations;
+@property (nonatomic, strong) NSArray *sourceCitations;
 /// @name Accessing sources 
 
 ///Also contained in sources. . Contains instances of sourceCitations
-@property (nonatomic) NSMutableArray *mutableSourceCitations;
+@property (nonatomic, strong) NSMutableArray *mutableSourceCitations;
 
 /// @name Accessing sources 
 
 ///Also contained in sources. . GCSourceEmbeddedAttribute
-@property (nonatomic) NSArray *sourceEmbeddeds;
+@property (nonatomic, strong) NSArray *sourceEmbeddeds;
 /// @name Accessing sources 
 
 ///Also contained in sources. . Contains instances of sourceEmbeddeds
-@property (nonatomic) NSMutableArray *mutableSourceEmbeddeds;
+@property (nonatomic, strong) NSMutableArray *mutableSourceEmbeddeds;
 
 /// . GCUserReferenceNumberAttribute
-@property (nonatomic) NSArray *userReferenceNumbers;
+@property (nonatomic, strong) NSArray *userReferenceNumbers;
 /// . Contains instances of userReferenceNumbers
-@property (nonatomic) NSMutableArray *mutableUserReferenceNumbers;
+@property (nonatomic, strong) NSMutableArray *mutableUserReferenceNumbers;
 
 /// . 
-@property (nonatomic) GCRecordIdNumberAttribute *recordIdNumber;
+@property (nonatomic, strong) GCRecordIdNumberAttribute *recordIdNumber;
 
 /// . 
-@property (nonatomic) GCChangeInfoAttribute *changeInfo;
+@property (nonatomic, strong) GCChangeInfoAttribute *changeInfo;
 
 
 @end

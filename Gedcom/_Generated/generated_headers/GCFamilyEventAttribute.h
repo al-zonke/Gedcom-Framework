@@ -33,122 +33,122 @@
 /// @name Accessing event details
 
 /// Property for accessing the following properties
-@property (nonatomic) NSArray *eventDetails;
+@property (nonatomic, strong) NSArray *eventDetails;
 
 /// @name Accessing event details 
 
 ///Also contained in eventDetails. . 
-@property (nonatomic) GCTypeDescriptionAttribute *typeDescription;
+@property (nonatomic, strong) GCTypeDescriptionAttribute *typeDescription;
 
 /// @name Accessing event details 
 
 ///Also contained in eventDetails. . 
-@property (nonatomic) GCDateAttribute *date;
+@property (nonatomic, strong) GCDateAttribute *date;
 
 /// @name Accessing event details 
 
 ///Also contained in eventDetails. . 
-@property (nonatomic) GCPlaceAttribute *place;
+@property (nonatomic, strong) GCPlaceAttribute *place;
 
 /// @name Accessing event details 
 
 ///Also contained in eventDetails. . 
-@property (nonatomic) GCAddressAttribute *address;
+@property (nonatomic, strong) GCAddressAttribute *address;
 
 /// @name Accessing event details 
 
 ///Also contained in eventDetails. . 
-@property (nonatomic) GCPhoneNumberAttribute *phoneNumber;
+@property (nonatomic, strong) GCPhoneNumberAttribute *phoneNumber;
 
 /// @name Accessing event details 
 
 ///Also contained in eventDetails. . 
-@property (nonatomic) GCAgeAttribute *age;
+@property (nonatomic, strong) GCAgeAttribute *age;
 
 /// @name Accessing event details 
 
 ///Also contained in eventDetails. . 
-@property (nonatomic) GCResponsibleAgencyAttribute *responsibleAgency;
+@property (nonatomic, strong) GCResponsibleAgencyAttribute *responsibleAgency;
 
 /// @name Accessing event details 
 
 ///Also contained in eventDetails. . 
-@property (nonatomic) GCCauseAttribute *cause;
+@property (nonatomic, strong) GCCauseAttribute *cause;
 
 /// @name Accessing sources
 
 /// Property for accessing the following properties
-@property (nonatomic) NSArray *sources;
+@property (nonatomic, strong) NSArray *sources;
 
 /// @name Accessing sources 
 
 ///Also contained in sources. . GCSourceCitationRelationship
-@property (nonatomic) NSArray *sourceCitations;
+@property (nonatomic, strong) NSArray *sourceCitations;
 /// @name Accessing sources 
 
 ///Also contained in sources. . Contains instances of sourceCitations
-@property (nonatomic) NSMutableArray *mutableSourceCitations;
+@property (nonatomic, strong) NSMutableArray *mutableSourceCitations;
 
 /// @name Accessing sources 
 
 ///Also contained in sources. . GCSourceEmbeddedAttribute
-@property (nonatomic) NSArray *sourceEmbeddeds;
+@property (nonatomic, strong) NSArray *sourceEmbeddeds;
 /// @name Accessing sources 
 
 ///Also contained in sources. . Contains instances of sourceEmbeddeds
-@property (nonatomic) NSMutableArray *mutableSourceEmbeddeds;
+@property (nonatomic, strong) NSMutableArray *mutableSourceEmbeddeds;
 
 /// @name Accessing multimedias
 
 /// Property for accessing the following properties
-@property (nonatomic) NSArray *multimedias;
+@property (nonatomic, strong) NSArray *multimedias;
 
 /// @name Accessing multimedias 
 
 ///Also contained in multimedias. . GCMultimediaReferenceRelationship
-@property (nonatomic) NSArray *multimediaReferences;
+@property (nonatomic, strong) NSArray *multimediaReferences;
 /// @name Accessing multimedias 
 
 ///Also contained in multimedias. . Contains instances of multimediaReferences
-@property (nonatomic) NSMutableArray *mutableMultimediaReferences;
+@property (nonatomic, strong) NSMutableArray *mutableMultimediaReferences;
 
 /// @name Accessing multimedias 
 
 ///Also contained in multimedias. . GCMultimediaEmbeddedAttribute
-@property (nonatomic) NSArray *multimediaEmbeddeds;
+@property (nonatomic, strong) NSArray *multimediaEmbeddeds;
 /// @name Accessing multimedias 
 
 ///Also contained in multimedias. . Contains instances of multimediaEmbeddeds
-@property (nonatomic) NSMutableArray *mutableMultimediaEmbeddeds;
+@property (nonatomic, strong) NSMutableArray *mutableMultimediaEmbeddeds;
 
 /// @name Accessing notes
 
 /// Property for accessing the following properties
-@property (nonatomic) NSArray *notes;
+@property (nonatomic, strong) NSArray *notes;
 
 /// @name Accessing notes 
 
 ///Also contained in notes. . GCNoteReferenceRelationship
-@property (nonatomic) NSArray *noteReferences;
+@property (nonatomic, strong) NSArray *noteReferences;
 /// @name Accessing notes 
 
 ///Also contained in notes. . Contains instances of noteReferences
-@property (nonatomic) NSMutableArray *mutableNoteReferences;
+@property (nonatomic, strong) NSMutableArray *mutableNoteReferences;
 
 /// @name Accessing notes 
 
 ///Also contained in notes. . GCNoteEmbeddedAttribute
-@property (nonatomic) NSArray *noteEmbeddeds;
+@property (nonatomic, strong) NSArray *noteEmbeddeds;
 /// @name Accessing notes 
 
 ///Also contained in notes. . Contains instances of noteEmbeddeds
-@property (nonatomic) NSMutableArray *mutableNoteEmbeddeds;
+@property (nonatomic, strong) NSMutableArray *mutableNoteEmbeddeds;
 
 /// . 
-@property (nonatomic) GCHusbandDetailAttribute *husbandDetail;
+@property (nonatomic, strong) GCHusbandDetailAttribute *husbandDetail;
 
 /// . 
-@property (nonatomic) GCWifeDetailAttribute *wifeDetail;
+@property (nonatomic, strong) GCWifeDetailAttribute *wifeDetail;
 
 
 @end

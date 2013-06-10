@@ -39,7 +39,7 @@
 
 // Properties:
 /// . 
-@property (nonatomic) GCTimeAttribute *time;
+@property (nonatomic, strong) GCTimeAttribute *time;
 
 
 @end

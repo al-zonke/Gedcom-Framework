@@ -39,7 +39,7 @@
 
 // Properties:
 /// .  NB: required property.
-@property (nonatomic) GCAgeAttribute *age;
+@property (nonatomic, strong) GCAgeAttribute *age;
 
 
 @end

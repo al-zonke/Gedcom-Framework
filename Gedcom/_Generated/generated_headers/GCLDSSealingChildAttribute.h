@@ -40,10 +40,10 @@
 
 // Properties:
 /// . 
-@property (nonatomic) GCLDSSealingChildStatusAttribute *lDSSealingChildStatus;
+@property (nonatomic, strong) GCLDSSealingChildStatusAttribute *lDSSealingChildStatus;
 
 /// .  NB: required property.
-@property (nonatomic) GCSealedToFamilyRelationship *sealedToFamily;
+@property (nonatomic, strong) GCSealedToFamilyRelationship *sealedToFamily;
 
 
 @end

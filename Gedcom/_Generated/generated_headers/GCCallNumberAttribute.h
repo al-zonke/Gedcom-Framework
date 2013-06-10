@@ -39,7 +39,7 @@
 
 // Properties:
 /// . 
-@property (nonatomic) GCMediaTypeAttribute *mediaType;
+@property (nonatomic, strong) GCMediaTypeAttribute *mediaType;
 
 
 @end

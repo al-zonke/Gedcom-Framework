@@ -39,7 +39,7 @@
 
 // Properties:
 /// .  NB: required property.
-@property (nonatomic) GCPlaceFormatAttribute *placeFormat;
+@property (nonatomic, strong) GCPlaceFormatAttribute *placeFormat;
 
 
 @end

@@ -42,16 +42,16 @@
 
 // Properties:
 /// . 
-@property (nonatomic) GCVersionAttribute *version;
+@property (nonatomic, strong) GCVersionAttribute *version;
 
 /// . 
-@property (nonatomic) GCDescriptiveNameAttribute *descriptiveName;
+@property (nonatomic, strong) GCDescriptiveNameAttribute *descriptiveName;
 
 /// . 
-@property (nonatomic) GCCorporationAttribute *corporation;
+@property (nonatomic, strong) GCCorporationAttribute *corporation;
 
 /// . 
-@property (nonatomic) GCHeaderSourceDataAttribute *headerSourceData;
+@property (nonatomic, strong) GCHeaderSourceDataAttribute *headerSourceData;
 
 
 @end

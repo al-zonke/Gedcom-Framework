@@ -43,53 +43,53 @@
 
 // Properties:
 /// . 
-@property (nonatomic) GCPlaceFormatAttribute *placeFormat;
+@property (nonatomic, strong) GCPlaceFormatAttribute *placeFormat;
 
 /// @name Accessing sources
 
 /// Property for accessing the following properties
-@property (nonatomic) NSArray *sources;
+@property (nonatomic, strong) NSArray *sources;
 
 /// @name Accessing sources 
 
 ///Also contained in sources. . GCSourceCitationRelationship
-@property (nonatomic) NSArray *sourceCitations;
+@property (nonatomic, strong) NSArray *sourceCitations;
 /// @name Accessing sources 
 
 ///Also contained in sources. . Contains instances of sourceCitations
-@property (nonatomic) NSMutableArray *mutableSourceCitations;
+@property (nonatomic, strong) NSMutableArray *mutableSourceCitations;
 
 /// @name Accessing sources 
 
 ///Also contained in sources. . GCSourceEmbeddedAttribute
-@property (nonatomic) NSArray *sourceEmbeddeds;
+@property (nonatomic, strong) NSArray *sourceEmbeddeds;
 /// @name Accessing sources 
 
 ///Also contained in sources. . Contains instances of sourceEmbeddeds
-@property (nonatomic) NSMutableArray *mutableSourceEmbeddeds;
+@property (nonatomic, strong) NSMutableArray *mutableSourceEmbeddeds;
 
 /// @name Accessing notes
 
 /// Property for accessing the following properties
-@property (nonatomic) NSArray *notes;
+@property (nonatomic, strong) NSArray *notes;
 
 /// @name Accessing notes 
 
 ///Also contained in notes. . GCNoteReferenceRelationship
-@property (nonatomic) NSArray *noteReferences;
+@property (nonatomic, strong) NSArray *noteReferences;
 /// @name Accessing notes 
 
 ///Also contained in notes. . Contains instances of noteReferences
-@property (nonatomic) NSMutableArray *mutableNoteReferences;
+@property (nonatomic, strong) NSMutableArray *mutableNoteReferences;
 
 /// @name Accessing notes 
 
 ///Also contained in notes. . GCNoteEmbeddedAttribute
-@property (nonatomic) NSArray *noteEmbeddeds;
+@property (nonatomic, strong) NSArray *noteEmbeddeds;
 /// @name Accessing notes 
 
 ///Also contained in notes. . Contains instances of noteEmbeddeds
-@property (nonatomic) NSMutableArray *mutableNoteEmbeddeds;
+@property (nonatomic, strong) NSMutableArray *mutableNoteEmbeddeds;
 
 
 @end

@@ -39,7 +39,7 @@
 
 // Properties:
 /// . 
-@property (nonatomic) GCVersionAttribute *version;
+@property (nonatomic, strong) GCVersionAttribute *version;
 
 
 @end

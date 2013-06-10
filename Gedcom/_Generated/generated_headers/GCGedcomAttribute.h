@@ -40,10 +40,10 @@
 
 // Properties:
 /// .  NB: required property.
-@property (nonatomic) GCVersionAttribute *version;
+@property (nonatomic, strong) GCVersionAttribute *version;
 
 /// .  NB: required property.
-@property (nonatomic) GCGedcomFormatAttribute *gedcomFormat;
+@property (nonatomic, strong) GCGedcomFormatAttribute *gedcomFormat;
 
 
 @end

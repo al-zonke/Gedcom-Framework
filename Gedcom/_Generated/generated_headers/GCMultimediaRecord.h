@@ -6,6 +6,7 @@
 
 @class GCBinaryObjectAttribute;
 @class GCChangeInfoAttribute;
+@class GCFileAttribute;
 @class GCMultimediaFormatAttribute;
 @class GCNoteEmbeddedAttribute;
 @class GCNoteReferenceRelationship;
@@ -30,47 +31,50 @@
 
 // Properties:
 /// .  NB: required property.
-@property (nonatomic) GCMultimediaFormatAttribute *multimediaFormat;
+@property (nonatomic, strong) GCMultimediaFormatAttribute *multimediaFormat;
 
 /// . 
-@property (nonatomic) GCTitleAttribute *title;
+@property (nonatomic, strong) GCTitleAttribute *title;
+
+/// . 
+@property (nonatomic, strong) GCFileAttribute *file;
 
 /// @name Accessing notes
 
 /// Property for accessing the following properties
-@property (nonatomic) NSArray *notes;
+@property (nonatomic, strong) NSArray *notes;
 
 /// @name Accessing notes 
 
 ///Also contained in notes. . GCNoteReferenceRelationship
-@property (nonatomic) NSArray *noteReferences;
+@property (nonatomic, strong) NSArray *noteReferences;
 /// @name Accessing notes 
 
 ///Also contained in notes. . Contains instances of noteReferences
-@property (nonatomic) NSMutableArray *mutableNoteReferences;
+@property (nonatomic, strong) NSMutableArray *mutableNoteReferences;
 
 /// @name Accessing notes 
 
 ///Also contained in notes. . GCNoteEmbeddedAttribute
-@property (nonatomic) NSArray *noteEmbeddeds;
+@property (nonatomic, strong) NSArray *noteEmbeddeds;
 /// @name Accessing notes 
 
 ///Also contained in notes. . Contains instances of noteEmbeddeds
-@property (nonatomic) NSMutableArray *mutableNoteEmbeddeds;
+@property (nonatomic, strong) NSMutableArray *mutableNoteEmbeddeds;
 
 /// . 
-@property (nonatomic) GCBinaryObjectAttribute *binaryObject;
+@property (nonatomic, strong) GCBinaryObjectAttribute *binaryObject;
 
 /// . GCUserReferenceNumberAttribute
-@property (nonatomic) NSArray *userReferenceNumbers;
+@property (nonatomic, strong) NSArray *userReferenceNumbers;
 /// . Contains instances of userReferenceNumbers
-@property (nonatomic) NSMutableArray *mutableUserReferenceNumbers;
+@property (nonatomic, strong) NSMutableArray *mutableUserReferenceNumbers;
 
 /// . 
-@property (nonatomic) GCRecordIdNumberAttribute *recordIdNumber;
+@property (nonatomic, strong) GCRecordIdNumberAttribute *recordIdNumber;
 
 /// . 
-@property (nonatomic) GCChangeInfoAttribute *changeInfo;
+@property (nonatomic, strong) GCChangeInfoAttribute *changeInfo;
 
 
 @end

@@ -39,7 +39,7 @@
 
 // Properties:
 /// . 
-@property (nonatomic) GCTypeDescriptionAttribute *typeDescription;
+@property (nonatomic, strong) GCTypeDescriptionAttribute *typeDescription;
 
 
 @end

@@ -44,22 +44,22 @@
 
 // Properties:
 /// . 
-@property (nonatomic) GCAddressLine1Attribute *addressLine1;
+@property (nonatomic, strong) GCAddressLine1Attribute *addressLine1;
 
 /// . 
-@property (nonatomic) GCAddressLine2Attribute *addressLine2;
+@property (nonatomic, strong) GCAddressLine2Attribute *addressLine2;
 
 /// . 
-@property (nonatomic) GCCityAttribute *city;
+@property (nonatomic, strong) GCCityAttribute *city;
 
 /// . 
-@property (nonatomic) GCStateAttribute *state;
+@property (nonatomic, strong) GCStateAttribute *state;
 
 /// . 
-@property (nonatomic) GCPostalCodeAttribute *postalCode;
+@property (nonatomic, strong) GCPostalCodeAttribute *postalCode;
 
 /// . 
-@property (nonatomic) GCCountryAttribute *country;
+@property (nonatomic, strong) GCCountryAttribute *country;
 
 
 @end

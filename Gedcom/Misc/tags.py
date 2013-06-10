@@ -31,7 +31,7 @@ def pluralize(tagInfo, key):
 
 ##########################################################################################
 
-propertyT = Template('/// $doc\n@property (nonatomic) $type *$name;\n')
+propertyT = Template('/// $doc\n@property (nonatomic, strong) $type *$name;\n')
 
 mutablePropertyT = Template("""@synthesize $name = _$name;
 @dynamic mutable$capName;

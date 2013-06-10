@@ -39,7 +39,7 @@
 
 // Properties:
 /// . 
-@property (nonatomic) GCRoleAttribute *role;
+@property (nonatomic, strong) GCRoleAttribute *role;
 
 
 @end

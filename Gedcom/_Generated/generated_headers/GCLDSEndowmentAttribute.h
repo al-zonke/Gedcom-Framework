@@ -39,7 +39,7 @@
 
 // Properties:
 /// . 
-@property (nonatomic) GCLDSEndowmentStatusAttribute *lDSEndowmentStatus;
+@property (nonatomic, strong) GCLDSEndowmentStatusAttribute *lDSEndowmentStatus;
 
 
 @end

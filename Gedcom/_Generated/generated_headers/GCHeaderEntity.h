@@ -34,44 +34,44 @@
 
 // Properties:
 /// .  NB: required property.
-@property (nonatomic) GCHeaderSourceAttribute *headerSource;
+@property (nonatomic, strong) GCHeaderSourceAttribute *headerSource;
 
 /// . GCDestinationAttribute
-@property (nonatomic) NSArray *destinations;
+@property (nonatomic, strong) NSArray *destinations;
 /// . Contains instances of destinations
-@property (nonatomic) NSMutableArray *mutableDestinations;
+@property (nonatomic, strong) NSMutableArray *mutableDestinations;
 
 /// . 
-@property (nonatomic) GCHeaderDateAttribute *headerDate;
+@property (nonatomic, strong) GCHeaderDateAttribute *headerDate;
 
 /// .  NB: required property.
-@property (nonatomic) GCSubmitterReferenceRelationship *submitterReference;
+@property (nonatomic, strong) GCSubmitterReferenceRelationship *submitterReference;
 
 /// . GCSubmissionReferenceRelationship
-@property (nonatomic) NSArray *submissionReferences;
+@property (nonatomic, strong) NSArray *submissionReferences;
 /// . Contains instances of submissionReferences
-@property (nonatomic) NSMutableArray *mutableSubmissionReferences;
+@property (nonatomic, strong) NSMutableArray *mutableSubmissionReferences;
 
 /// . 
-@property (nonatomic) GCFileAttribute *file;
+@property (nonatomic, strong) GCFileAttribute *file;
 
 /// . 
-@property (nonatomic) GCCopyrightAttribute *copyright;
+@property (nonatomic, strong) GCCopyrightAttribute *copyright;
 
 /// .  NB: required property.
-@property (nonatomic) GCGedcomAttribute *gedcom;
+@property (nonatomic, strong) GCGedcomAttribute *gedcom;
 
 /// .  NB: required property.
-@property (nonatomic) GCCharacterSetAttribute *characterSet;
+@property (nonatomic, strong) GCCharacterSetAttribute *characterSet;
 
 /// . 
-@property (nonatomic) GCLanguageAttribute *language;
+@property (nonatomic, strong) GCLanguageAttribute *language;
 
 /// . 
-@property (nonatomic) GCPlaceFormatSpecifierAttribute *placeFormatSpecifier;
+@property (nonatomic, strong) GCPlaceFormatSpecifierAttribute *placeFormatSpecifier;
 
 /// . 
-@property (nonatomic) GCNoteEmbeddedAttribute *noteEmbedded;
+@property (nonatomic, strong) GCNoteEmbeddedAttribute *noteEmbedded;
 
 
 @end

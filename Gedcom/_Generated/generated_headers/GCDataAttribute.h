@@ -40,12 +40,12 @@
 
 // Properties:
 /// . 
-@property (nonatomic) GCDateAttribute *date;
+@property (nonatomic, strong) GCDateAttribute *date;
 
 /// . GCTextAttribute
-@property (nonatomic) NSArray *texts;
+@property (nonatomic, strong) NSArray *texts;
 /// . Contains instances of texts
-@property (nonatomic) NSMutableArray *mutableTexts;
+@property (nonatomic, strong) NSMutableArray *mutableTexts;
 
 
 @end

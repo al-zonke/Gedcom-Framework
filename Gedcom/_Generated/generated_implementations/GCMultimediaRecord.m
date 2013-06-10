@@ -7,6 +7,7 @@
 @implementation GCMultimediaRecord {
 	GCMultimediaFormatAttribute *_multimediaFormat;
 	GCTitleAttribute *_title;
+	GCFileAttribute *_file;
 	NSMutableArray *_noteReferences;
 	NSMutableArray *_noteEmbeddeds;
 	GCBinaryObjectAttribute *_binaryObject;
@@ -45,6 +46,7 @@
 // Properties:
 @dynamic multimediaFormat;
 @dynamic title;
+@dynamic file;
 @dynamic notes;
 @synthesize noteReferences = _noteReferences;
 @dynamic mutableNoteReferences;

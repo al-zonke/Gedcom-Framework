@@ -39,7 +39,7 @@
 
 // Properties:
 /// . 
-@property (nonatomic) GCChildInFamilyRelationship *childInFamily;
+@property (nonatomic, strong) GCChildInFamilyRelationship *childInFamily;
 
 
 @end

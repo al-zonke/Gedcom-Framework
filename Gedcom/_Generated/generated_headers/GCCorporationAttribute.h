@@ -5,7 +5,10 @@
 #import "GCAttribute.h"
 
 @class GCAddressAttribute;
+@class GCEmailAddressAttribute;
+@class GCFaxNumberAttribute;
 @class GCPhoneNumberAttribute;
+@class GCWebAddressAttribute;
 
 /**
  
@@ -39,13 +42,51 @@
 +(instancetype)corporationWithGedcomStringValue:(NSString *)value;
 
 // Properties:
-/// . 
-@property (nonatomic) GCAddressAttribute *address;
+/// @name Accessing address structures
 
-/// . GCPhoneNumberAttribute
-@property (nonatomic) NSArray *phoneNumbers;
-/// . Contains instances of phoneNumbers
-@property (nonatomic) NSMutableArray *mutablePhoneNumbers;
+/// Property for accessing the following properties
+@property (nonatomic, strong) NSArray *addressStructures;
+
+/// @name Accessing address structures 
+
+///Also contained in addressStructures. . 
+@property (nonatomic, strong) GCAddressAttribute *address;
+
+/// @name Accessing address structures 
+
+///Also contained in addressStructures. . GCPhoneNumberAttribute
+@property (nonatomic, strong) NSArray *phoneNumbers;
+/// @name Accessing address structures 
+
+///Also contained in addressStructures. . Contains instances of phoneNumbers
+@property (nonatomic, strong) NSMutableArray *mutablePhoneNumbers;
+
+/// @name Accessing address structures 
+
+///Also contained in addressStructures. . GCEmailAddressAttribute
+@property (nonatomic, strong) NSArray *emailAddresses;
+/// @name Accessing address structures 
+
+///Also contained in addressStructures. . Contains instances of emailAddresses
+@property (nonatomic, strong) NSMutableArray *mutableEmailAddresses;
+
+/// @name Accessing address structures 
+
+///Also contained in addressStructures. . GCFaxNumberAttribute
+@property (nonatomic, strong) NSArray *faxNumbers;
+/// @name Accessing address structures 
+
+///Also contained in addressStructures. . Contains instances of faxNumbers
+@property (nonatomic, strong) NSMutableArray *mutableFaxNumbers;
+
+/// @name Accessing address structures 
+
+///Also contained in addressStructures. . GCWebAddressAttribute
+@property (nonatomic, strong) NSArray *webAddresses;
+/// @name Accessing address structures 
+
+///Also contained in addressStructures. . Contains instances of webAddresses
+@property (nonatomic, strong) NSMutableArray *mutableWebAddresses;
 
 
 @end

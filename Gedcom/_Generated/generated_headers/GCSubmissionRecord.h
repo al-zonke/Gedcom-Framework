@@ -31,33 +31,33 @@
 
 // Properties:
 /// . 
-@property (nonatomic) GCSubmitterReferenceRelationship *submitterReference;
+@property (nonatomic, strong) GCSubmitterReferenceRelationship *submitterReference;
 
 /// . 
-@property (nonatomic) GCFamilyFileAttribute *familyFile;
+@property (nonatomic, strong) GCFamilyFileAttribute *familyFile;
 
 /// . 
-@property (nonatomic) GCTempleAttribute *temple;
+@property (nonatomic, strong) GCTempleAttribute *temple;
 
 /// . 
-@property (nonatomic) GCGenerationsOfAncestorsAttribute *generationsOfAncestors;
+@property (nonatomic, strong) GCGenerationsOfAncestorsAttribute *generationsOfAncestors;
 
 /// . 
-@property (nonatomic) GCGenerationsOfDescendantsAttribute *generationsOfDescendants;
+@property (nonatomic, strong) GCGenerationsOfDescendantsAttribute *generationsOfDescendants;
 
 /// . 
-@property (nonatomic) GCOrdinanceFlagAttribute *ordinanceFlag;
+@property (nonatomic, strong) GCOrdinanceFlagAttribute *ordinanceFlag;
 
 /// . GCUserReferenceNumberAttribute
-@property (nonatomic) NSArray *userReferenceNumbers;
+@property (nonatomic, strong) NSArray *userReferenceNumbers;
 /// . Contains instances of userReferenceNumbers
-@property (nonatomic) NSMutableArray *mutableUserReferenceNumbers;
+@property (nonatomic, strong) NSMutableArray *mutableUserReferenceNumbers;
 
 /// . 
-@property (nonatomic) GCRecordIdNumberAttribute *recordIdNumber;
+@property (nonatomic, strong) GCRecordIdNumberAttribute *recordIdNumber;
 
 /// . 
-@property (nonatomic) GCChangeInfoAttribute *changeInfo;
+@property (nonatomic, strong) GCChangeInfoAttribute *changeInfo;
 
 
 @end
