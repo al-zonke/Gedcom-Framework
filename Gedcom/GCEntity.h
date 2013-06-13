@@ -30,6 +30,6 @@
 /// @name Accessing properties
 
 /// The text value of the entity; most entities have no use for this. Will only be used if the entity accepts values according to its gedTag.
-@property (nonatomic) GCString *value;
+@property (nonatomic, strong) GCString *value;
 
 @end

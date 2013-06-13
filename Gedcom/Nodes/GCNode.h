@@ -98,23 +98,23 @@
 @property (weak, readonly, nonatomic) GCNode *parent;
 
 /// The tag code of the receiver; may not be `nil`.
-@property (nonatomic) NSString *tagCode;
+@property (nonatomic, strong) NSString *tagCode;
 
 /// The value of the receiver; may be `nil`.
-@property (nonatomic) NSString *gedcomValue;
+@property (nonatomic, strong) NSString *gedcomValue;
 
 /// `TRUE` the value is non-nil and is wrapped in `@`s, otherwise `NO`.
 @property (readonly, nonatomic) BOOL valueIsXref;
 
 /// The xref of the receiver; may be `nil`.
-@property (nonatomic) NSString *xref;
+@property (nonatomic, strong) NSString *xref;
 
 /// An ordered collection containing the subnodes of the receiver.
 /// @see mutableSubNodes.
-@property (nonatomic) NSArray *subNodes;
+@property (nonatomic, strong) NSArray *subNodes;
 /// A mutable KVC-compliant ordered collection containing the subnodes of the receiver.
 /// @see subNodes.
-@property (nonatomic) NSMutableArray *mutableSubNodes;
+@property (nonatomic, strong) NSMutableArray *mutableSubNodes;
 
 /// A uniquing collection containing the gedTags for all subNodes of the receiver.
 @property (readonly, nonatomic) NSSet *allSubTags;
