@@ -15,22 +15,22 @@
 "%d days" = "%d days";
 
 /* GCAge keywords */
-"CHILD" = "Child";
-"STILLBORN" = "Stillborn";
-"INFANT" = "Infant";
+"CHILD" = "child";
+"STILLBORN" = "stillborn";
+"INFANT" = "infant";
 
 /* GCDate keywords */
-"FROM %@ TO %@" = "%$1@ … %$2@";
-"FROM %@" = "%@ …";
-"TO %@" = "… %@";
+"FROM %@ TO %@" = "from %@ to %@";
+"FROM %@" = "from %@";
+"TO %@" = "%@ to";
 
-"BET %@ AND %@" = "%$1@ – %$2@";
-"BEF %@" = "< %@";
-"AFT %@" = "> %@";
+"BET %@ AND %@" = "%@ – %@";
+"BEF %@" = "before %@";
+"AFT %@" = "after %@";
 
-"ABT %@" = "~ %@";
-"EST %@" = "≈ %@";
-"CAL %@" = "= %@";
+"ABT %@" = "about %@";
+"EST %@" = "estimamed at %@";
+"CAL %@" = "calculated %@";
 
 "INT %@ %@" = "\"%$1@\" %$2@";
 
