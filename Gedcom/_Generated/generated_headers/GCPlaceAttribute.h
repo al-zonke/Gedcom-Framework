@@ -4,6 +4,7 @@
 
 #import "GCEventDetailAttribute.h"
 
+@class GCMapAttribute;
 @class GCNoteEmbeddedAttribute;
 @class GCNoteReferenceRelationship;
 @class GCPlaceFormatAttribute;
@@ -44,6 +45,9 @@
 // Properties:
 /// . 
 @property (nonatomic, strong) GCPlaceFormatAttribute *placeFormat;
+
+/// . 
+@property (nonatomic, strong) GCMapAttribute *map;
 
 /// @name Accessing sources
 

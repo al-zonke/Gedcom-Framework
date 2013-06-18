@@ -1055,9 +1055,29 @@
 		"valueType": "placestring",
 		"validSubTags": [
                          { "name": "placeFormat", "min": 0, "max": 1 },
+                         { "name": "map", "min": 0, "max": 1 },
                          { "groupName": "@source" },
                          { "groupName": "@note" }
                          ]
+	},
+	"map": {
+		"code": "MAP",
+		"objectType": "attribute",
+		"valueType": "string",
+		"validSubTags": [
+                         { "name": "longitude", "min": 1, "max": 1 },
+                         { "name": "latitude", "min": 1, "max": 1 }
+                         ]
+	},
+	"longitude": {
+		"code": "LONG",
+		"objectType": "attribute",
+		"valueType": "string"
+	},
+	"latitude": {
+		"code": "LATI",
+		"objectType": "attribute",
+		"valueType": "string"
 	},
 	"postalCode": {
 		"code": "POST",

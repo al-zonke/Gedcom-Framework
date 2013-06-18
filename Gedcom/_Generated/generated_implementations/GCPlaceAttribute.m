@@ -6,6 +6,7 @@
 
 @implementation GCPlaceAttribute {
 	GCPlaceFormatAttribute *_placeFormat;
+	GCMapAttribute *_map;
 	NSMutableArray *_sourceCitations;
 	NSMutableArray *_sourceEmbeddeds;
 	NSMutableArray *_noteReferences;
@@ -64,6 +65,7 @@
 
 // Properties:
 @dynamic placeFormat;
+@dynamic map;
 @dynamic sources;
 @synthesize sourceCitations = _sourceCitations;
 @dynamic mutableSourceCitations;
