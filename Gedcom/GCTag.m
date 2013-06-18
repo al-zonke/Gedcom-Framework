@@ -109,9 +109,9 @@ static dispatch_queue_t _tagSetupQueue;
                 GCTag *tag = [[GCTag alloc] initWithName:key
                                                 settings:tagDict];
                 
-                _tagStore[key] = tag;
-                _tagStore[tagDict[kPluralName]] = tag;
-                _tagStore[NSClassFromString(tagDict[kClassName])] = tag;
+                    _tagStore[key] = tag;
+                    _tagStore[tagDict[kPluralName]] = tag;
+                    _tagStore[NSClassFromString(tagDict[kClassName])] = tag;
                 
                 if (tagDict[kTagCode] && ([tagDict[kObjectType] isEqualToString:@"entity"] || [tagDict[kObjectType] isEqualToString:@"record"])) {
                     _rootTagsByCode[tagDict[kTagCode]] = tag;
@@ -123,8 +123,8 @@ static dispatch_queue_t _tagSetupQueue;
 
 - (instancetype)parent
 {
-    return _tagStore[_settings[kParent]];
-}
+        return _tagStore[_settings[kParent]];
+    }
 
 static inline void expandSubtag(NSMutableOrderedSet *set, NSMutableDictionary *occurrencesDicts, NSDictionary *subtag) {
     if (subtag[kGroupName]) {
@@ -273,31 +273,40 @@ static inline void expandSubtag(NSMutableOrderedSet *set, NSMutableDictionary *o
 
 + (GCTag *)rootTagWithCode:(NSString *)code
 {
+    GCTag *returnTag = nil;
+    
     GCParameterAssert(code);
     
     dispatch_group_wait(_tagSetupGroup, DISPATCH_TIME_FOREVER);
+
     
-    if ([code hasPrefix:@"_"]) {
+    if (![code hasPrefix:@"_"]) {
+        returnTag = _rootTagsByCode[code];
+    }
+    
+    if (returnTag == nil) {
         NSString *className = @"GCCustomEntity";
         NSString *tagName = [NSString stringWithFormat:@"custom%@Entity", code];
         NSString *pluralName = [NSString stringWithFormat:@"%@s", tagName];
         
-        if (_tagStore[tagName]) {
-            return _tagStore[tagName];
-        }
+        returnTag = _tagStore[tagName];
         
-        GCTag *tag = [[GCTag alloc] initWithName:tagName
-                                        settings:@{kTagCode: code,
-                                                  kTagName: tagName,
-                                                  kPluralName: pluralName,
-                                                  kTakesValue: @(1),
-                                                  kObjectType: @"entity",
-                                                  kValidSubTags: [NSArray array]}];
-        NSLog(@"Created %@: %@", tagName, tag);
-        _rootTagsByCode[code] = tag;
-        _tagStore[tagName] = tag;
-        _tagStore[pluralName] = tag;
-        _tagStore[NSClassFromString(className)] = tag;
+        if (returnTag == nil)
+        {
+            GCTag *tag = [[GCTag alloc] initWithName:tagName
+                                            settings:@{kTagCode: code,
+                                                      kTagName: tagName,
+                                                      kPluralName: pluralName,
+                                                      kTakesValue: @(1),
+                                                      kObjectType: @"entity",
+                                                      kValidSubTags: [NSArray array]}];
+            _rootTagsByCode[code] = tag;
+            _tagStore[tagName] = tag;
+            _tagStore[pluralName] = tag;
+            _tagStore[NSClassFromString(className)] = tag;
+            
+            returnTag = tag;
+        }
     }
     
     return _rootTagsByCode[code];
@@ -309,7 +318,10 @@ static inline void expandSubtag(NSMutableOrderedSet *set, NSMutableDictionary *o
     
     dispatch_group_wait(_tagSetupGroup, DISPATCH_TIME_FOREVER);
     
-    return _tagStore[aClass];
+    GCTag *tag = nil;
+    tag = _tagStore[aClass];
+    
+    return tag;
 }
 
 + (NSArray *)rootTags
@@ -320,10 +332,10 @@ static inline void expandSubtag(NSMutableOrderedSet *set, NSMutableDictionary *o
         NSArray *_rootKeys = @[ @"families", @"individuals", @"multimedias", @"notes", @"repositories", @"sources", @"submitters" ];
         
         NSMutableArray *rootTags = [NSMutableArray array];
+        
         for (NSString *key in _rootKeys) {
             [rootTags addObject:_tagStore[key]];
         }
-        
         _rootTags = [rootTags copy];
     });
     
@@ -334,18 +346,24 @@ static inline void expandSubtag(NSMutableOrderedSet *set, NSMutableDictionary *o
 
 - (GCTag *)subTagWithCode:(NSString *)code type:(GCTagType)type
 {
+    GCTag *returnTag = nil;
+    
     NSString *tagType = (type == GCTagTypeRelationship ? @"relationship" : @"attribute" ); //TODO check for others
     
-    if ([code hasPrefix:@"_"]) {
-        @synchronized (self) {
+    if (![code hasPrefix:@"_"])
+    {
+        returnTag = _cachedSubTagsByCode[tagType][code];
+    }
+    
+    if (returnTag == nil)
+    {
+        NSString *tagName = [NSString stringWithFormat:@"custom%@%@", code, [tagType capitalizedString]];
+        returnTag = _tagStore[tagName];
+        
+        if (returnTag == nil) {
             NSString *className = [NSString stringWithFormat:@"GCCustom%@", [tagType capitalizedString]];
-            NSString *tagName = [NSString stringWithFormat:@"custom%@%@", code, [tagType capitalizedString]];
             NSString *pluralName = [NSString stringWithFormat:@"%@s", tagName];
-            
-            if (_tagStore[tagName]) {
-                return _tagStore[tagName];
-            }
-            
+
             GCTag *tag = [[GCTag alloc] initWithName:tagName
                                             settings:@{kTagCode: code,
                                             kTagName: tagName,
@@ -354,16 +372,16 @@ static inline void expandSubtag(NSMutableOrderedSet *set, NSMutableDictionary *o
                                          kTargetType: @"record",
                                          kObjectType: tagType,
                                        kValidSubTags: [NSArray array]}];
-            NSLog(@"Created %@: %@", tagName, tag);
+            
             _tagStore[tagName] = tag;
             _tagStore[pluralName] = tag;
             _tagStore[NSClassFromString(className)] = tag;
-            
-            return tag;
+
+            returnTag = tag;
         }
     }
-    
-    return _cachedSubTagsByCode[tagType][code];
+        
+    return returnTag;
 }
 
 - (GCTag *)subTagWithName:(NSString *)name

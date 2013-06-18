@@ -113,6 +113,7 @@
 
 - (void)setValueWithGedcomString:(NSString *)string
 {
+    NSParameterAssert(self.gedTag);
     NSParameterAssert(self.valueType);
     
     self.value = [self.valueType valueWithGedcomString:string];

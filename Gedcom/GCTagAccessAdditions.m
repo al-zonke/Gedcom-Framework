@@ -27,10 +27,10 @@ __strong static NSMutableDictionary *_validPropertiesByType;
         // FIXME: KVO subclasses w NSKVONotifying_ prefix ruin tagwithObjectClass.
         // This hack fixes it, but is ugly and easy to break since it relies on undocumented implementation details
         tag = [GCTag tagWithObjectClass:[self superclass]];
-        
+
         NSParameterAssert(tag);
     }
-    
+
 	return tag;
 }
 

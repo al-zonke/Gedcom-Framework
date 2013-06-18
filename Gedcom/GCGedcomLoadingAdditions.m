@@ -49,7 +49,13 @@
 - (void)_waitUntilDoneBuildingFromGedcom
 {
     if (self->_isBuildingFromGedcom) {
+        NSLog(@"_isBuildingFromGedcom = YES (start waiting)");
         dispatch_semaphore_wait(self->_buildingFromGedcomSemaphore, DISPATCH_TIME_FOREVER);
+        NSLog(@"_isBuildingFromGedcom = YES (stop waiting)");
+    }
+    else
+    {
+        NSLog(@"_isBuildingFromGedcom = NO");
     }
 }
 
@@ -79,6 +85,8 @@
             self.value = [GCString valueWithGedcomString:node.gedcomValue];
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+            
+            // !!! I'm failing here
             [self _addPropertiesWithGedcomNodes:node.subNodes];
             
             dispatch_semaphore_signal(self->_buildingFromGedcomSemaphore);
@@ -92,6 +100,7 @@
 + (instancetype)newWithGedcomNode:(GCNode *)node inContext:(GCContext *)context
 {
     id proxy = [[GCObjectProxy alloc] initWitBlock:^GCObject *{
+        NSLog(@"[[GCObjectProxy alloc] initWitBlock:…], node: %p", node);
         return [[self alloc] initWithGedcomNode:node useXref:NO inContext:context];
     }];
     
