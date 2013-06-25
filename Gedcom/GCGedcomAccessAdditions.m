@@ -106,7 +106,7 @@ __strong static NSDictionary *_defaultColors;
     NSUInteger curMarker = 0;
     NSUInteger newMarker = 0;
     
-    _isBuildingFromGedcom = YES;
+    self.isBuildingFromGedcom = YES;
     
     while (newMarker < [newSubNodes count]) {
         //NSLog(@"%ld,%ld", newMarker, curMarker);
@@ -139,7 +139,7 @@ __strong static NSDictionary *_defaultColors;
         
     }
     
-    _isBuildingFromGedcom = NO;
+    self.isBuildingFromGedcom = NO;
     
     GCParameterAssert([self.properties count] == [newSubNodes count]);
 }

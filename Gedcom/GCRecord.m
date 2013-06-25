@@ -103,7 +103,7 @@
 
 - (void)didChangeValueForKey:(NSString *)key
 {
-    if (!_isBuildingFromGedcom && [self.validPropertyTypes containsObject:@"changeInfo"]) {
+    if (!self.isBuildingFromGedcom && [self.validPropertyTypes containsObject:@"changeInfo"]) {
         self.modificationDate = [NSDate date];
     }
     
@@ -112,7 +112,7 @@
 
 - (void)didChange:(NSKeyValueChange)changeKind valuesAtIndexes:(NSIndexSet *)indexes forKey:(NSString *)key
 {
-    if (!_isBuildingFromGedcom && [self.validPropertyTypes containsObject:@"changeInfo"]) {
+    if (!self.isBuildingFromGedcom && [self.validPropertyTypes containsObject:@"changeInfo"]) {
         self.modificationDate = [NSDate date];
     }
     

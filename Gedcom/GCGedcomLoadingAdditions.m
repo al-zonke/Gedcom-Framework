@@ -32,6 +32,8 @@
 {
     GCTag *tag = [self.gedTag subTagWithCode:node.tagCode type:([node valueIsXref] ? GCTagTypeRelationship : GCTagTypeAttribute)];
     
+    NSParameterAssert(tag);
+    
     if (tag.isCustom && ![self.context _shouldHandleCustomTag:tag forNode:node onObject:self]) {
         return;
     }
@@ -48,14 +50,8 @@
 
 - (void)_waitUntilDoneBuildingFromGedcom
 {
-    if (self->_isBuildingFromGedcom) {
-        NSLog(@"_isBuildingFromGedcom = YES (start waiting)");
+    if (self.isBuildingFromGedcom) {
         dispatch_semaphore_wait(self->_buildingFromGedcomSemaphore, DISPATCH_TIME_FOREVER);
-        NSLog(@"_isBuildingFromGedcom = YES (stop waiting)");
-    }
-    else
-    {
-        NSLog(@"_isBuildingFromGedcom = NO");
     }
 }
 
@@ -78,20 +74,19 @@
     if (self) {
         GCTag *tag = [GCTag rootTagWithCode:node.tagCode];
         
-        self->_isBuildingFromGedcom = YES;
+        self.isBuildingFromGedcom = YES;
         self->_buildingFromGedcomSemaphore = dispatch_semaphore_create(0);
         
         if (tag.takesValue)
             self.value = [GCString valueWithGedcomString:node.gedcomValue];
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-            
-            // !!! I'm failing here
             [self _addPropertiesWithGedcomNodes:node.subNodes];
             
             dispatch_semaphore_signal(self->_buildingFromGedcomSemaphore);
-            self->_isBuildingFromGedcom = NO;
+            self.isBuildingFromGedcom = NO;
         });
+        
     }
     
     return self;
@@ -100,7 +95,6 @@
 + (instancetype)newWithGedcomNode:(GCNode *)node inContext:(GCContext *)context
 {
     id proxy = [[GCObjectProxy alloc] initWitBlock:^GCObject *{
-        NSLog(@"[[GCObjectProxy alloc] initWitBlock:…], node: %p", node);
         return [[self alloc] initWithGedcomNode:node useXref:NO inContext:context];
     }];
     
@@ -129,7 +123,7 @@
     self = [self init];
     
     if (self) {
-        self->_isBuildingFromGedcom = YES;
+        self.isBuildingFromGedcom = YES;
         self->_buildingFromGedcomSemaphore = dispatch_semaphore_create(0);
         
         GCTag *tag = [object.gedTag subTagWithCode:node.tagCode type:([node valueIsXref] ? GCTagTypeRelationship : GCTagTypeAttribute)];
@@ -148,7 +142,7 @@
             [self _addPropertiesWithGedcomNodes:node.subNodes];
             
             dispatch_semaphore_signal(self->_buildingFromGedcomSemaphore);
-            self->_isBuildingFromGedcom = NO;
+            self.isBuildingFromGedcom = NO;
         });
     }
     

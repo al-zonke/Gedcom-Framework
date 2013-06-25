@@ -111,7 +111,7 @@ static inline BOOL classHasProperty(Class *cls, NSString *propString, BOOL isMul
                         return;
                     }
                     
-                    if (!_s->_isBuildingFromGedcom) {
+                    if (!_s.isBuildingFromGedcom) {
                         NSUndoManager *uM = [_s valueForKey:@"undoManager"];
                         @synchronized (uM) {
                             [uM beginUndoGrouping];
@@ -175,7 +175,7 @@ static inline BOOL classHasProperty(Class *cls, NSString *propString, BOOL isMul
                 IMP imp = imp_implementationWithBlock(^(GCObject *_s, NSUInteger index) {
                     NSMutableArray *_ivar = object_getIvar(_s, ivar);
                     
-                    if (!_s->_isBuildingFromGedcom) {
+                    if (!_s.isBuildingFromGedcom) {
                         NSUndoManager *uM = [_s valueForKey:@"undoManager"];
                         @synchronized (uM) {
                             [uM beginUndoGrouping];
@@ -300,7 +300,7 @@ static inline BOOL classHasProperty(Class *cls, NSString *propString, BOOL isMul
                 IMP imp = imp_implementationWithBlock(^(GCObject *_s, id newObj) {
                     id _ivar = object_getIvar(_s, ivar);
                     
-                    if (!_s->_isBuildingFromGedcom) {
+                    if (!_s.isBuildingFromGedcom) {
                         NSUndoManager *uM = [_s valueForKey:@"undoManager"];
                         @synchronized (uM) {
                             [uM beginUndoGrouping];

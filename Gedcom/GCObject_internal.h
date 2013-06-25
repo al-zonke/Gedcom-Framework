@@ -10,7 +10,6 @@
 
 @interface GCObject () {
 @protected
-    BOOL _isBuildingFromGedcom;
     dispatch_semaphore_t _buildingFromGedcomSemaphore;
 }
 
@@ -25,5 +24,7 @@
 @property (nonatomic) NSArray *subNodes;
 
 @property (nonatomic, readonly) NSUndoManager *undoManager;
+
+@property (atomic) BOOL isBuildingFromGedcom;
 
 @end
