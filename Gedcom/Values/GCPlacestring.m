@@ -67,7 +67,9 @@ __strong static NSMutableDictionary *_allPlaces = nil;
             }
         }
         
-        _allPlaces[gedcomString] = parent;
+        @synchronized(_allPlaces) {
+            _allPlaces[gedcomString] = parent;
+        }
         
         return parent;
     }
