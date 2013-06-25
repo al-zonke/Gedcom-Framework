@@ -595,11 +595,11 @@ __strong static NSMapTable *_contextsByName = nil;
         encodingStr = @"ASCII";
     } else if (fileEncoding == GCUTF16FileEncoding) {
         encodingStr = @"UNICODE";
+    } else if (fileEncoding == GCUTF8FileEncoding) {
+        encodingStr = @"UTF-8";
     } else {
         NSAssert(false, @"Unhandled file encoding!");
     }
-    
-    // TODO UTF8?
     
     [self.header addAttributeWithType:@"characterSet" value:encodingStr];
 }
