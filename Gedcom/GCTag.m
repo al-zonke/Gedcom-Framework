@@ -76,12 +76,11 @@ const NSString *kIsMain = @"isMain";
 
 #pragma mark Initialization
 
+__strong static NSDictionary *_tagInfo;
 __strong static NSMapTable *_tagStore;
-__strong static NSMutableDictionary *_tagInfo;
 __strong static NSMutableDictionary *_rootTagsByCode;
 
-static dispatch_group_t _tagSetupGroup;
-static dispatch_queue_t _tagSetupQueue;
+static dispatch_queue_t _tagSetupSerialQueue;
 
 + (void)load
 {
@@ -95,15 +94,14 @@ static dispatch_queue_t _tagSetupQueue;
     NSError *err = nil;
     
     _tagInfo = [NSJSONSerialization JSONObjectWithData:jsonData
-                                               options:NSJSONReadingMutableContainers
+                                               options:0
                                                  error:&err];
     
     NSAssert(_tagInfo != nil, @"error: %@", err);
     
-    _tagSetupGroup = dispatch_group_create();
-    _tagSetupQueue = dispatch_queue_create("dk.kildekort.Gedcom.tagSetup", DISPATCH_QUEUE_CONCURRENT);
+    _tagSetupSerialQueue = dispatch_queue_create("dk.kildekort.Gedcom.tagSetup", DISPATCH_QUEUE_SERIAL);
     
-    dispatch_group_async(_tagSetupGroup, _tagSetupQueue, ^{
+    dispatch_async(_tagSetupSerialQueue, ^{
         [_tagInfo enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSMutableDictionary *tagDict, BOOL *stop) {
             if (![tagDict[@"key"] hasPrefix:@"@"]) {
                 GCTag *tag = [[GCTag alloc] initWithName:key
@@ -123,8 +121,13 @@ static dispatch_queue_t _tagSetupQueue;
 
 - (instancetype)parent
 {
-        return _tagStore[_settings[kParent]];
-    }
+    __block GCTag *resultTag = nil;
+    dispatch_sync(_tagSetupSerialQueue, ^{
+        resultTag = _tagStore[_settings[kParent]];
+    });
+
+    return resultTag;
+}
 
 static inline void expandSubtag(NSMutableOrderedSet *set, NSMutableDictionary *occurrencesDicts, NSDictionary *subtag) {
     if (subtag[kGroupName]) {
@@ -251,8 +254,7 @@ static inline void expandSubtag(NSMutableOrderedSet *set, NSMutableDictionary *o
         _hasReverse = [_settings[kHasReverse] boolValue];
         _isMain = [_settings[kIsMain] boolValue];
         
-        dispatch_async(_tagSetupQueue, ^{
-            dispatch_group_wait(_tagSetupGroup, DISPATCH_TIME_FOREVER);
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             [self _buildSubTagCaches];
         });
     }
@@ -266,62 +268,65 @@ static inline void expandSubtag(NSMutableOrderedSet *set, NSMutableDictionary *o
 {
     GCParameterAssert(name);
     
-    dispatch_group_wait(_tagSetupGroup, DISPATCH_TIME_FOREVER);
-    
-    return _tagStore[name];
+    __block GCTag *resultTag = nil;
+    dispatch_sync(_tagSetupSerialQueue, ^{
+        resultTag = _tagStore[name];
+    });
+
+    return resultTag;
 }
 
 + (GCTag *)rootTagWithCode:(NSString *)code
 {
-    GCTag *returnTag = nil;
+    __block GCTag *returnTag = nil;
     
     GCParameterAssert(code);
     
-    dispatch_group_wait(_tagSetupGroup, DISPATCH_TIME_FOREVER);
-
-    
     if (![code hasPrefix:@"_"]) {
-        returnTag = _rootTagsByCode[code];
+        dispatch_sync(_tagSetupSerialQueue, ^{
+            returnTag = _rootTagsByCode[code];
+        });
     }
     
     if (returnTag == nil) {
         NSString *className = @"GCCustomEntity";
         NSString *tagName = [NSString stringWithFormat:@"custom%@Entity", code];
         NSString *pluralName = [NSString stringWithFormat:@"%@s", tagName];
-        
-        returnTag = _tagStore[tagName];
-        
-        if (returnTag == nil)
-        {
-            GCTag *tag = [[GCTag alloc] initWithName:tagName
-                                            settings:@{kTagCode: code,
-                                                      kTagName: tagName,
-                                                      kPluralName: pluralName,
-                                                      kTakesValue: @(1),
-                                                      kObjectType: @"entity",
-                                                      kValidSubTags: [NSArray array]}];
-            _rootTagsByCode[code] = tag;
-            _tagStore[tagName] = tag;
-            _tagStore[pluralName] = tag;
-            _tagStore[NSClassFromString(className)] = tag;
+    
+        dispatch_sync(_tagSetupSerialQueue, ^{
+            returnTag = _tagStore[tagName];
             
-            returnTag = tag;
-        }
+            if (returnTag == nil)
+            {
+                GCTag *tag = [[GCTag alloc] initWithName:tagName
+                                                settings:@{kTagCode: code,
+                                                          kTagName: tagName,
+                                                          kPluralName: pluralName,
+                                                          kTakesValue: @(1),
+                                                          kObjectType: @"entity",
+                                                          kValidSubTags: [NSArray array]}];
+                _rootTagsByCode[code] = tag;
+                _tagStore[tagName] = tag;
+                _tagStore[pluralName] = tag;
+                _tagStore[NSClassFromString(className)] = tag;
+                returnTag = tag;
+            }
+        });
     }
     
-    return _rootTagsByCode[code];
+    return returnTag;
 }
 
 + (GCTag *)tagWithObjectClass:(Class)aClass
 {
     GCParameterAssert(aClass);
     
-    dispatch_group_wait(_tagSetupGroup, DISPATCH_TIME_FOREVER);
+    __block GCTag *resultTag = nil;
+    dispatch_sync(_tagSetupSerialQueue, ^{
+        resultTag = _tagStore[aClass];
+    });
     
-    GCTag *tag = nil;
-    tag = _tagStore[aClass];
-    
-    return tag;
+    return resultTag;
 }
 
 + (NSArray *)rootTags
@@ -333,10 +338,12 @@ static inline void expandSubtag(NSMutableOrderedSet *set, NSMutableDictionary *o
         
         NSMutableArray *rootTags = [NSMutableArray array];
         
-        for (NSString *key in _rootKeys) {
-            [rootTags addObject:_tagStore[key]];
-        }
-        _rootTags = [rootTags copy];
+        dispatch_sync(_tagSetupSerialQueue, ^{
+            for (NSString *key in _rootKeys) {
+                [rootTags addObject:_tagStore[key]];
+            }
+        });
+        _rootTags = [NSArray arrayWithArray:rootTags];
     });
     
     return _rootTags;
@@ -346,41 +353,43 @@ static inline void expandSubtag(NSMutableOrderedSet *set, NSMutableDictionary *o
 
 - (GCTag *)subTagWithCode:(NSString *)code type:(GCTagType)type
 {
-    GCTag *returnTag = nil;
+    __block GCTag *returnTag = nil;
     
     NSString *tagType = (type == GCTagTypeRelationship ? @"relationship" : @"attribute" ); //TODO check for others
-    
-    if (![code hasPrefix:@"_"])
-    {
-        returnTag = _cachedSubTagsByCode[tagType][code];
+
+    if (![code hasPrefix:@"_"]) {
+        dispatch_sync(_tagSetupSerialQueue, ^{
+            returnTag = _cachedSubTagsByCode[tagType][code];
+        });
     }
     
-    if (returnTag == nil)
-    {
+    if (returnTag == nil) {
         NSString *tagName = [NSString stringWithFormat:@"custom%@%@", code, [tagType capitalizedString]];
-        returnTag = _tagStore[tagName];
+
+        dispatch_sync(_tagSetupSerialQueue, ^{
+            returnTag = _tagStore[tagName];
         
-        if (returnTag == nil) {
-            NSString *className = [NSString stringWithFormat:@"GCCustom%@", [tagType capitalizedString]];
-            NSString *pluralName = [NSString stringWithFormat:@"%@s", tagName];
+            if (returnTag == nil) {
+                NSString *className = [NSString stringWithFormat:@"GCCustom%@", [tagType capitalizedString]];
+                NSString *pluralName = [NSString stringWithFormat:@"%@s", tagName];
 
-            GCTag *tag = [[GCTag alloc] initWithName:tagName
-                                            settings:@{kTagCode: code,
-                                            kTagName: tagName,
-                                         kPluralName: pluralName,
-                                          kValueType: @"string",
-                                         kTargetType: @"record",
-                                         kObjectType: tagType,
-                                       kValidSubTags: [NSArray array]}];
-            
-            _tagStore[tagName] = tag;
-            _tagStore[pluralName] = tag;
-            _tagStore[NSClassFromString(className)] = tag;
-
-            returnTag = tag;
-        }
+                GCTag *tag = [[GCTag alloc] initWithName:tagName
+                                                settings:@{kTagCode: code,
+                                                kTagName: tagName,
+                                             kPluralName: pluralName,
+                                              kValueType: @"string",
+                                             kTargetType: @"record",
+                                             kObjectType: tagType,
+                                           kValidSubTags: [NSArray array]}];
+                
+                _tagStore[tagName] = tag;
+                _tagStore[pluralName] = tag;
+                _tagStore[NSClassFromString(className)] = tag;
+                returnTag = tag;
+            }
+        });
     }
-        
+    
     return returnTag;
 }
 
