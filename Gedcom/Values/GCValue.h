@@ -243,6 +243,14 @@
  */
 + (instancetype)dateWithDate:(NSDate *)date;
 
+/** Returns a date created with a given date components and calendar.
+ 
+ @param components An NSDateComponents objects.
+ @param calendar An NSCalenrad object.
+ @return A new date.
+ */
++ (instancetype)dateWithSimpleDate:(NSDateComponents *)components calendar:(NSCalendar *)calendar;
+
 #pragma mark Helpers
 /// @name Helpers
 

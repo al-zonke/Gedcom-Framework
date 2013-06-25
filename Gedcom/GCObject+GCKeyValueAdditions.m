@@ -107,7 +107,7 @@
     if ([value isKindOfClass:[GCValue class]]) {
         val = value;
     } else {
-        val = [[tag.valueType alloc] initWithGedcomStringValue:value];
+        val = [tag.valueType valueWithGedcomString:value];
     }
     
     GCAttribute *attr = [[tag.objectClass alloc] initWithValue:val];
