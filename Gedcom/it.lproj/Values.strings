@@ -1,0 +1,45 @@
+/*
+ Formatting.strings
+ Gedcom
+ 
+ Created by Mikkel Eide Eriksen on 23/05/12.
+ Copyright (c) 2012 Mikkel Eide Eriksen. All rights reserved.
+ */
+
+/* GCAge period strings */
+"%d year" = "%d anno";
+"%d years" = "%d anni";
+"%d month" = "%d mese";
+"%d months" = "%d mesi";
+"%d day" = "%d giorno";
+"%d days" = "%d giorni";
+
+/* GCAge keywords */
+"CHILD" = "bimbo";
+"STILLBORN" = "nato morto";
+"INFANT" = "infante";
+
+/* GCDate keywords */
+"FROM %@ TO %@" = "da %@ a %@";
+"FROM %@" = "da %@";
+"TO %@" = "%@ a";
+
+"BET %@ AND %@" = "";
+"BEF %@" = "prima di %@";
+"AFT %@" = "dopo %@";
+
+"ABT %@" = "circa %@";
+"EST %@" = "stimato a %@";
+"CAL %@" = "calcolato %@";
+
+"INT %@ %@" = "\"%$1@\" %$2@";
+
+/* GCGender keywords */
+"Male" = "Maschio";
+"Female" = "Femmina";
+"Unknown" = "Sconosciuto";
+
+/* GCBool keywords */
+"Yes" = "Sì";
+"Undecided" = "In sospeso";
+

@@ -1051,6 +1051,18 @@
 		3EF7A1CE151C5F8E004A8540 /* GCNodeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCNodeTests.m; sourceTree = "<group>"; };
 		3EF7A1D4151C600C004A8540 /* allged.ged */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = allged.ged; sourceTree = "<group>"; };
 		3EF7A1D5151C600C004A8540 /* simple.ged */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = simple.ged; sourceTree = "<group>"; };
+		8A734300177C496500A8941A /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Values.strings; sourceTree = "<group>"; };
+		8A734301177C496500A8941A /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Errors.strings; sourceTree = "<group>"; };
+		8A734302177C497E00A8941A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Values.strings; sourceTree = "<group>"; };
+		8A734303177C497E00A8941A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Errors.strings; sourceTree = "<group>"; };
+		8A734304177C498B00A8941A /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Values.strings; sourceTree = "<group>"; };
+		8A734305177C498B00A8941A /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Errors.strings; sourceTree = "<group>"; };
+		8A734306177C499900A8941A /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Values.strings; sourceTree = "<group>"; };
+		8A734307177C499900A8941A /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Errors.strings; sourceTree = "<group>"; };
+		8A734308177C49A900A8941A /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Values.strings; sourceTree = "<group>"; };
+		8A734309177C49A900A8941A /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Errors.strings; sourceTree = "<group>"; };
+		8A73430A177C49B500A8941A /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Values.strings; sourceTree = "<group>"; };
+		8A73430B177C49B500A8941A /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Errors.strings; sourceTree = "<group>"; };
 		8A92D6971765D72700DF8E89 /* GCWebAddressAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCWebAddressAttribute.h; sourceTree = "<group>"; };
 		8A92D6981765D72700DF8E89 /* GCFaxNumberAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCFaxNumberAttribute.h; sourceTree = "<group>"; };
 		8A92D6991765D72700DF8E89 /* GCEmailAddressAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCEmailAddressAttribute.h; sourceTree = "<group>"; };
@@ -2218,6 +2230,12 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				de,
+				ru,
+				pt,
+				es,
+				fr,
+				it,
 			);
 			mainGroup = 3E1C3E5A151C319B005E09E1;
 			productRefGroup = 3E1C3E67151C319C005E09E1 /* Products */;
@@ -2688,6 +2706,12 @@
 			isa = PBXVariantGroup;
 			children = (
 				3E83FF27171CC5270093B685 /* en */,
+				8A734301177C496500A8941A /* de */,
+				8A734303177C497E00A8941A /* ru */,
+				8A734305177C498B00A8941A /* pt */,
+				8A734307177C499900A8941A /* es */,
+				8A734309177C49A900A8941A /* fr */,
+				8A73430B177C49B500A8941A /* it */,
 			);
 			name = Errors.strings;
 			sourceTree = "<group>";
@@ -2728,6 +2752,12 @@
 			isa = PBXVariantGroup;
 			children = (
 				3EDD4113156D022200002352 /* en */,
+				8A734300177C496500A8941A /* de */,
+				8A734302177C497E00A8941A /* ru */,
+				8A734304177C498B00A8941A /* pt */,
+				8A734306177C499900A8941A /* es */,
+				8A734308177C49A900A8941A /* fr */,
+				8A73430A177C49B500A8941A /* it */,
 			);
 			name = Values.strings;
 			sourceTree = "<group>";

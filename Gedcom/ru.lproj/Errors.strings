@@ -1,0 +1,32 @@
+/*
+ Errors.strings
+ Gedcom
+ 
+ Created by Mikkel Eide Eriksen on 15/04/13.
+ Copyright (c) 2013 Mikkel Eide Eriksen. All rights reserved.
+ */
+
+/****** Parser errors *******/
+
+"Could not determine encoding for the file." = "Невозможно определить кодировку файла";
+"Parser stopped at node #%ld (line %ld)" = "Парсер прекратил выполнение на элементе #%ld (строка %ld)";
+
+/****** Validation errors *******/
+
+// objects //
+"Too many values for key %@ on %@" = "Слишком много значений для ключа %@ в %@";
+"Too few values for key %@ on %@" = "Слишком мало значений для ключа %@ в %@";
+
+// attributes //
+"Value %@ is incorrect type for %@ (should be %@)" = "Значение %@ имеет недопустимый тип в %@ (должен быть %@)";
+"Value %@ is not allowed for %@ (should be one of %@)" = "Значение %@ недопустимо для %@ (должно быть одно из %@)";
+"Value is missing for %@ (should be a %@)" = "Значение для %@ не указано (должно быть %@)";
+
+// relationships //
+"Target is missing for key %@ (should be a %@)" = "Значение для ключа %@ не указано (должно быть %@)";
+"Target %@ is incorrect type for key %@ (should be %@)" = "Значение %@ имеет недопустимый тип %@ (должен быть %@)";
+
+/****** Sanity checking errors *******/
+
+"%@ usually occurs before %@" = "%@ обычно встречается до %@";
+"%@ is young for %@" = "%@ слишком молод для %@";

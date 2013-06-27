@@ -1,0 +1,32 @@
+/*
+ Errors.strings
+ Gedcom
+ 
+ Created by Mikkel Eide Eriksen on 15/04/13.
+ Copyright (c) 2013 Mikkel Eide Eriksen. All rights reserved.
+ */
+
+/****** Parser errors *******/
+
+"Could not determine encoding for the file." = "No se ha podido determinar la codificación del archivo";
+"Parser stopped at node #%ld (line %ld)" = "El analizador sintáctico se ha detenido en el nódulo #%ld (line %ld)";
+
+/****** Validation errors *******/
+
+// objects //
+"Too many values for key %@ on %@" = "Demasiados valores para la tecla %@ on %@";
+"Too few values for key %@ on %@" = "Valores insuficientes para la tecla %@ on %@";
+
+// attributes //
+"Value %@ is incorrect type for %@ (should be %@)" = "El valor %@ es incorrecto para %@ (debería ser %@)";
+"Value %@ is not allowed for %@ (should be one of %@)" = "El valor %@ no está permitido para %@ (debería ser de %@)";
+"Value is missing for %@ (should be a %@)" = "Falta un valor para %@ (debería ser %@)";
+
+// relationships //
+"Target is missing for key %@ (should be a %@)" = "Falta un objetivo para la tecla %@ (debería ser %@)";
+"Target %@ is incorrect type for key %@ (should be %@)" = "El objetivo %@ es incorrecto para la tecla %@ (debería ser %@)";
+
+/****** Sanity checking errors *******/
+
+"%@ usually occurs before %@" = "%@ ocurre normalmente antes de %@";
+"%@ is young for %@" = "%@ es joven para %@";
