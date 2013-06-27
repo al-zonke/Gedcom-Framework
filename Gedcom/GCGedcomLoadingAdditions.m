@@ -52,6 +52,7 @@
 {
     if (self.isBuildingFromGedcom) {
         dispatch_semaphore_wait(self->_buildingFromGedcomSemaphore, DISPATCH_TIME_FOREVER);
+        dispatch_semaphore_signal(self->_buildingFromGedcomSemaphore);
     }
 }
 
@@ -74,8 +75,8 @@
     if (self) {
         GCTag *tag = [GCTag rootTagWithCode:node.tagCode];
         
-        self.isBuildingFromGedcom = YES;
         self->_buildingFromGedcomSemaphore = dispatch_semaphore_create(0);
+        self.isBuildingFromGedcom = YES;
         
         if (tag.takesValue)
             self.value = [GCString valueWithGedcomString:node.gedcomValue];
@@ -83,8 +84,8 @@
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
             [self _addPropertiesWithGedcomNodes:node.subNodes];
             
-            dispatch_semaphore_signal(self->_buildingFromGedcomSemaphore);
             self.isBuildingFromGedcom = NO;
+            dispatch_semaphore_signal(self->_buildingFromGedcomSemaphore);
         });
         
     }
@@ -123,8 +124,8 @@
     self = [self init];
     
     if (self) {
-        self.isBuildingFromGedcom = YES;
         self->_buildingFromGedcomSemaphore = dispatch_semaphore_create(0);
+//        NSLog(@"\t create2 [%p]", self);self.isBuildingFromGedcom = YES;
         
         GCTag *tag = [object.gedTag subTagWithCode:node.tagCode type:([node valueIsXref] ? GCTagTypeRelationship : GCTagTypeAttribute)];
         
@@ -141,8 +142,9 @@
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
             [self _addPropertiesWithGedcomNodes:node.subNodes];
             
-            dispatch_semaphore_signal(self->_buildingFromGedcomSemaphore);
             self.isBuildingFromGedcom = NO;
+            dispatch_semaphore_signal(self->_buildingFromGedcomSemaphore);
+//            NSLog(@"\t-signal [%p]", self);
         });
     }
     

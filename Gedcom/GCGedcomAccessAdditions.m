@@ -106,6 +106,7 @@ __strong static NSDictionary *_defaultColors;
     NSUInteger curMarker = 0;
     NSUInteger newMarker = 0;
     
+    dispatch_semaphore_wait(self->_buildingFromGedcomSemaphore, DISPATCH_TIME_FOREVER);
     self.isBuildingFromGedcom = YES;
     
     while (newMarker < [newSubNodes count]) {
@@ -140,7 +141,8 @@ __strong static NSDictionary *_defaultColors;
     }
     
     self.isBuildingFromGedcom = NO;
-    
+    dispatch_semaphore_signal(self->_buildingFromGedcomSemaphore);
+
     GCParameterAssert([self.properties count] == [newSubNodes count]);
 }
 
