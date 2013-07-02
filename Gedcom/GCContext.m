@@ -149,6 +149,12 @@ __strong static NSMapTable *_contextsByName = nil;
     
     NSString *gedString = [NSString stringWithContentsOfURL:url usedEncoding:&usedEncoding error:&parseError];
     
+    if (parseError != nil && parseError.code == NSFileReadUnknownStringEncodingError)
+    {
+        parseError = nil;
+        gedString = [NSString stringWithContentsOfURL:url encoding:NSASCIIStringEncoding error:&parseError];
+    }
+    
     // ANSEL can be interpreted as ASCII
     if ((usedEncoding == NSASCIIStringEncoding) &&
         ([self stringIsANSEL:gedString]))
@@ -156,6 +162,8 @@ __strong static NSMapTable *_contextsByName = nil;
         NSData *anselData = [NSData dataWithContentsOfURL:url];
         gedString = stringFromANSELData(anselData);
     }
+    
+    NSParameterAssert(gedString);
     
     return [self parseString:gedString error:error];
 }
@@ -338,7 +346,12 @@ __strong static NSMapTable *_contextsByName = nil;
 
 - (void)_setXref:(NSString *)xref forRecord:(GCRecord *)record
 {
-    //NSLog(@"%p: setting xref %@ on %p", self, xref, record);
+//    NSLog(@"%p: setting xref %@ on [%p] %@", self, xref, record, NSStringFromClass([record class]));
+//    
+//    if ([record isMemberOfClass:[GCRecord class]])
+//    {
+//        NSLog(@"Опачки!");
+//    }
     
     NSParameterAssert(xref);
     NSParameterAssert(record);
@@ -398,7 +411,7 @@ __strong static NSMapTable *_contextsByName = nil;
         
         if (record) {
             //NSLog(@"Found existing: %@ > %p", xref, record);
-            NSParameterAssert(!aClass || [record isKindOfClass:aClass]);
+                NSParameterAssert(!aClass || [record isKindOfClass:aClass]);
         } else if (create) {
             record = [[aClass alloc] initInContext:self];
             //NSLog(@"Creating new: %@ (%@) > %p", xref, aClass, record);
