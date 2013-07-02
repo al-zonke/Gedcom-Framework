@@ -32,7 +32,7 @@ static __strong NSString *_lineSeparator = @"\n";
 
 - (instancetype)initWithTag:(NSString *)tag value:(NSString *)value xref:(NSString *)xref subNodes:(NSArray *)subNodes
 {
-    NSParameterAssert(tag != nil && ([tag length] <= 4 || [tag hasPrefix:@"_"]));
+    NSParameterAssert(tag != nil && ([tag length] <= 5 || [tag hasPrefix:@"_"]));
     
     self = [super init];
     
