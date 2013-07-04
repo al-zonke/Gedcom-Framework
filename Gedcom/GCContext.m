@@ -346,13 +346,6 @@ __strong static NSMapTable *_contextsByName = nil;
 
 - (void)_setXref:(NSString *)xref forRecord:(GCRecord *)record
 {
-//    NSLog(@"%p: setting xref %@ on [%p] %@", self, xref, record, NSStringFromClass([record class]));
-//    
-//    if ([record isMemberOfClass:[GCRecord class]])
-//    {
-//        NSLog(@"Опачки!");
-//    }
-    
     NSParameterAssert(xref);
     NSParameterAssert(record);
     NSParameterAssert(!_xrefToRecordMap[xref]);
