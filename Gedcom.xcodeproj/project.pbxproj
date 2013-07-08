@@ -497,6 +497,8 @@
 		8A92D6B21765ED7100DF8E89 /* GCAddressStructureAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A92D6B11765ED7000DF8E89 /* GCAddressStructureAttribute.m */; };
 		8AA4D447174270BD000E2B66 /* GCContext_internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E17B4B31602CEAF009D2CCB /* GCContext_internal.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		8AC799781742764C00578E90 /* GedcomErrors.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E5A68671610CA16005B2319 /* GedcomErrors.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8AD2B69F178AF91900F6697B /* GCSecondGenerationNameAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 8AD2B69E178AF91900F6697B /* GCSecondGenerationNameAttribute.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8AD2B6A1178AF92600F6697B /* GCSecondGenerationNameAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AD2B6A0178AF92600F6697B /* GCSecondGenerationNameAttribute.m */; };
 		8AFB6A951768BBAC001290FA /* GCMapAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 8AFB6A921768BBAC001290FA /* GCMapAttribute.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8AFB6A961768BBAC001290FA /* GCLongitudeAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 8AFB6A931768BBAC001290FA /* GCLongitudeAttribute.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8AFB6A971768BBAC001290FA /* GCLatitudeAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 8AFB6A941768BBAC001290FA /* GCLatitudeAttribute.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -1071,6 +1073,8 @@
 		8A92D6A11765D73C00DF8E89 /* GCEmailAddressAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCEmailAddressAttribute.m; sourceTree = "<group>"; };
 		8A92D6AF1765ED5F00DF8E89 /* GCAddressStructureAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCAddressStructureAttribute.h; sourceTree = "<group>"; };
 		8A92D6B11765ED7000DF8E89 /* GCAddressStructureAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCAddressStructureAttribute.m; sourceTree = "<group>"; };
+		8AD2B69E178AF91900F6697B /* GCSecondGenerationNameAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCSecondGenerationNameAttribute.h; sourceTree = "<group>"; };
+		8AD2B6A0178AF92600F6697B /* GCSecondGenerationNameAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCSecondGenerationNameAttribute.m; sourceTree = "<group>"; };
 		8AFB6A921768BBAC001290FA /* GCMapAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCMapAttribute.h; sourceTree = "<group>"; };
 		8AFB6A931768BBAC001290FA /* GCLongitudeAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCLongitudeAttribute.h; sourceTree = "<group>"; };
 		8AFB6A941768BBAC001290FA /* GCLatitudeAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCLatitudeAttribute.h; sourceTree = "<group>"; };
@@ -1379,6 +1383,7 @@
 		3E41BD4E1725FBF9003286E7 /* generated_headers */ = {
 			isa = PBXGroup;
 			children = (
+				8AD2B69E178AF91900F6697B /* GCSecondGenerationNameAttribute.h */,
 				8AFB6A921768BBAC001290FA /* GCMapAttribute.h */,
 				8AFB6A931768BBAC001290FA /* GCLongitudeAttribute.h */,
 				8AFB6A941768BBAC001290FA /* GCLatitudeAttribute.h */,
@@ -1552,6 +1557,7 @@
 		3E41BDEE1725FBF9003286E7 /* generated_implementations */ = {
 			isa = PBXGroup;
 			children = (
+				8AD2B6A0178AF92600F6697B /* GCSecondGenerationNameAttribute.m */,
 				8AFB6A981768BBB9001290FA /* GCMapAttribute.m */,
 				8AFB6A991768BBB9001290FA /* GCLongitudeAttribute.m */,
 				8AFB6A9A1768BBB9001290FA /* GCLatitudeAttribute.m */,
@@ -2131,6 +2137,7 @@
 				8AFB6A951768BBAC001290FA /* GCMapAttribute.h in Headers */,
 				8AFB6A961768BBAC001290FA /* GCLongitudeAttribute.h in Headers */,
 				8AFB6A971768BBAC001290FA /* GCLatitudeAttribute.h in Headers */,
+				8AD2B69F178AF91900F6697B /* GCSecondGenerationNameAttribute.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2576,6 +2583,7 @@
 				8AFB6A9B1768BBB9001290FA /* GCMapAttribute.m in Sources */,
 				8AFB6A9C1768BBB9001290FA /* GCLongitudeAttribute.m in Sources */,
 				8AFB6A9D1768BBB9001290FA /* GCLatitudeAttribute.m in Sources */,
+				8AD2B6A1178AF92600F6697B /* GCSecondGenerationNameAttribute.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

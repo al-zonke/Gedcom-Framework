@@ -139,6 +139,7 @@
 #import "GCRetirementAttribute.h"
 #import "GCRoleAttribute.h"
 #import "GCSealedToFamilyRelationship.h"
+#import "GCSecondGenerationNameAttribute.h"
 #import "GCSexAttribute.h"
 #import "GCSocialSecurityNumberAttribute.h"
 #import "GCSourceRecord.h"

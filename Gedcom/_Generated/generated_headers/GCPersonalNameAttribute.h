@@ -10,6 +10,7 @@
 @class GCNicknameAttribute;
 @class GCNoteEmbeddedAttribute;
 @class GCNoteReferenceRelationship;
+@class GCSecondGenerationNameAttribute;
 @class GCSourceCitationRelationship;
 @class GCSourceEmbeddedAttribute;
 @class GCSurnameAttribute;
@@ -64,6 +65,9 @@
 
 /// . 
 @property (nonatomic, strong) GCNameSuffixAttribute *nameSuffix;
+
+/// . 
+@property (nonatomic, strong) GCSecondGenerationNameAttribute *secondGenerationName;
 
 /// @name Accessing sources
 

@@ -11,6 +11,7 @@
 	GCSurnamePrefixAttribute *_surnamePrefix;
 	GCSurnameAttribute *_surname;
 	GCNameSuffixAttribute *_nameSuffix;
+	GCSecondGenerationNameAttribute *_secondGenerationName;
 	NSMutableArray *_sourceCitations;
 	NSMutableArray *_sourceEmbeddeds;
 	NSMutableArray *_noteReferences;
@@ -74,6 +75,7 @@
 @dynamic surnamePrefix;
 @dynamic surname;
 @dynamic nameSuffix;
+@dynamic secondGenerationName;
 @dynamic sources;
 @synthesize sourceCitations = _sourceCitations;
 @dynamic mutableSourceCitations;

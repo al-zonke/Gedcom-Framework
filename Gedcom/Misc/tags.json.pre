@@ -404,6 +404,7 @@
                          { "name": "surnamePrefix", "min": 0, "max": 1 },
                          { "name": "surname", "min": 0, "max": 1 },
                          { "name": "nameSuffix", "min": 0, "max": 1 },
+                         { "name": "secondGenerationName", "min": 0, "max": 1 },
                          { "groupName": "@source" },
                          { "groupName": "@note" }
                          ]
@@ -429,6 +430,12 @@
 		"objectType": "attribute",
 		"valueType": "string",
 		"plural": "surnamePrefixes"
+	},
+    "secondGenerationName": {
+    	"code": "SECG",
+		"objectType": "attribute",
+		"valueType": "string",
+		"plural": "secondGenerationName"
 	},
 	"surname": {
 		"code": "SURN",
