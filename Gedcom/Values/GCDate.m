@@ -87,6 +87,11 @@
     return [self.calendar dateFromComponents:tmpComponents];
 }
 
+- (NSDateComponents *)minDateComponents
+{
+    return self.dateComponents;
+}
+
 - (NSDate *)maxDate
 {
     NSDateComponents *tmpComponents = [self.dateComponents copy];
@@ -100,6 +105,11 @@
     //NSLog(@"maxDate: %@", tmpComponents);
     
     return [self.calendar dateFromComponents:tmpComponents];
+}
+
+- (NSDateComponents *)maxDateComponents
+{
+    return self.dateComponents;
 }
 
 @end

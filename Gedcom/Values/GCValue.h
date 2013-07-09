@@ -287,8 +287,14 @@
 /// If the date is a range or a period, will return the start of the period (or nil for open-ended), otherwise it will be the same as the date, and identical to maxDate.
 @property (readonly) NSDate *minDate;
 
+/// Date components for min date.
+@property (readonly) NSDateComponents *minDateComponents;
+
 /// If the date is a range or a period, will return the end of the period, otherwise it will be the same as the date, and identical to minDate.
 @property (readonly) NSDate *maxDate;
+
+/// Date components for max date.
+@property (readonly) NSDateComponents *maxDateComponents;
 
 @end
 
